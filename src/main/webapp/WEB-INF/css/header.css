@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   background-color: #fff;
+}
+
+.header-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 40px;
+   border-bottom: none;
+}
+
+.main-logo {
+   width: 250px;
+   height: 70px;
+   
+}
+
+.header-right {
+   display: flex;
+   align-items: center;
+}
+
+.user-options {
+   display: flex;
+   align-items: center;
+   margin-right: 20px;
+}
+
+.user-options a {
+   margin-left: 10px;
+   text-decoration: none;
+   color: black;
+   font-weight: bold;
+   font-size: 14px;
+}
+
+.user-options .flag {
+   width: 25px;
+   height: 15px;
+   margin-left: 10px;
+}
+
+.icons {
+   margin-left: 10px;
+}
+
+.icon-heart, .icon-cart {
+   font-size: 20px;
+   margin-left: 15px;
+   color: #333;
+}
+
+.search-bar {
+   width: 200px;
+   padding: 5px;
+   border: 1px solid #ccc;
+   border-radius: 20px;
+   outline: none;
+}
+
+.team-logos {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 10px 0;
+}
+
+.team-logos img {
+   width: 45px;
+   height: 45px;
+   margin: 0 15px;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logos:hover img {
+    transform: scale(1.05); /* 크기를 10% 키움 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .main-logo {
+        width: 200px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .user-options {
+        margin-right: 0;
+    }
+
+    .user-options a {
+        font-size: 12px;
+    }
+
+    .icons {
+        margin-left: 0;
+    }
+
+    .team-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .team-logos img {
+        width: 35px;
+        height: 35px;
+        margin: 5px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* 더 작은 화면을 위한 추가 미디어 쿼리 */
+@media (max-width: 480px) {
+    .team-logos img {
+        width: 30px;
+        height: 30px;
+        margin: 3px;
+    }
+
+    .user-options a {
+        font-size: 11px;
+    }
+
+    .icon-heart, .icon-cart {
+        font-size: 18px;
+    }
+}
