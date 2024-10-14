@@ -27,8 +27,8 @@ public class SpringConfiguration {
 	private @Value("${jdbc.username}") String username;
 	private @Value("${jdbc.password}") String password;
 	
-	@Autowired
-	private ApplicationContext context;
+	//@Autowired
+	//private ApplicationContext context;
 	
 	/* DataSource */
 	@Bean
@@ -46,8 +46,8 @@ public class SpringConfiguration {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource());
 		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
-		sqlSessionFactoryBean.setMapperLocations(context.getResources("classpath:mapper/*Mapper.xml"));
-		sqlSessionFactoryBean.setTypeAliasesPackage("*.bean");
+		//sqlSessionFactoryBean.setMapperLocations(context.getResources("classpath:mapper/*Mapper.xml"));
+		//sqlSessionFactoryBean.setTypeAliasesPackage("*.bean");
 		return sqlSessionFactoryBean.getObject();
 	}
 	
