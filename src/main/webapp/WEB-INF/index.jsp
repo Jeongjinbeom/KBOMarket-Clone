@@ -77,8 +77,8 @@
            
        </div>
    </section>
-
-   <section class="menuList">
+   
+ 	<section class="menuList">
        <div class="menu-container">
            <div class="menu-column">
                <h3>ABOUT US</h3>
