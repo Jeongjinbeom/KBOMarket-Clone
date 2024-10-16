@@ -23,7 +23,6 @@
 		<beans:property name="maxUploadSize" value="5000000"/><!-- 5MB -->
 	</beans:bean>
 	
-	<context:component-scan base-package="goods.controller"></context:component-scan>
 		
 	<resources location="/WEB-INF/css/" mapping="/css/**"></resources>
 	<resources location="/WEB-INF/js/" mapping="/js/**"></resources>
@@ -31,9 +30,10 @@
 	<resources location="/WEB-INF/storage/" mapping="/storage/**"></resources>
 
 
-
 	<!-- controller Bean 설정 -->
-	<!-- <context:component-scan base-package="user.controller"></context:component-scan> -->
+	<context:component-scan base-package="user.controller" />
+	<context:component-scan base-package="goods.controller"></context:component-scan>
+	
 	
 	
 </beans:beans>

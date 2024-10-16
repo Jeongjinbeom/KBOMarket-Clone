@@ -20,9 +20,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement // == <tx:annotation-driven transaction-manager="transactionManager"/>
 @PropertySource("classpath:spring/db.properties")
+@MapperScan("user.dao")
 @MapperScan("goods.dao")
 public class SpringConfiguration {
-
+	
 	private @Value("${jdbc.driver}") String driver;
 	private @Value("${jdbc.url}") String url;
 	private @Value("${jdbc.username}") String username;
