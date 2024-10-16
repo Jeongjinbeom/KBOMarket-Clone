@@ -2,7 +2,7 @@
 
 CREATE TABLE KBOTeam (
 	teamId INT PRIMARY KEY,
-	teamAbbr VARCHAR(10) NOT NULL,  -- 팀 약자
+	teamAbbr VARCHAR(50) NOT NULL,  -- 팀 약자
 	teamName VARCHAR(100) NOT NULL UNIQUE    -- 팀 전체 이름
 );
 
@@ -16,4 +16,6 @@ INSERT INTO KBOTeam (teamId, teamAbbr, teamName) VALUES
 (7, 'GIANTS', '롯데 자이언츠'),
 (8, 'LIONS', '삼성 라이온즈'),
 (9, 'EAGLES', '한화 이글스'),
-(10, 'KIWOOM', '키움 히어로즈');
+(10, 'HEROES', '키움 히어로즈')
+ON DUPLICATE KEY UPDATE
+teamAbbr = VALUES(teamAbbr), teamName = VALUES(teamName);
