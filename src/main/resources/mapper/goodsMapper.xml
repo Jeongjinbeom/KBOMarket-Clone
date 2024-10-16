@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="goods.dao.GoodsDAO">
+
+	<!-- goodsList.jsp -->
+	<select id="getGoodsList" parameterType="java.util.Map" resultType="goodsDTO">
+		select * from kbogoods where teamId=#{teamId} order by ${order} ${orderDirection}
+	</select>
+	
+	<select id="getGoodsList2" parameterType="java.util.Map" resultType="goodsDTO">
+		select * from kbogoods where teamId=#{teamId} and ctg=#{ctg} order by ${order} ${orderDirection}
+	</select>
+	
+		<select id="getTotalGoods" parameterType="String" resultType="int">
+		select count(*) from kbogoods where teamId=#{teamId}
+	</select>
+	
+	<select id="getTotalGoods2" parameterType="java.util.Map" resultType="int">
+		select count(*) from kbogoods where teamId=#{teamId} and ctg=#{ctg}
+	</select>
+	
+	<select id="getTeamName" parameterType="String" resultType="String">
+		select teamName from kboteam where teamId=#{teamId}
+	</select>
+	
+	
+	<!-- goodsDetail.jsp -->
+	<select id="getGoods" parameterType="String" resultType="goodsDTO">
+		select * from kbogoods where prdNo=#{prdNo}
+	</select>
+</mapper>
