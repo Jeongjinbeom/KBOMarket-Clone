@@ -17,7 +17,9 @@
 
          <div class="header-right">
             <div class="user-options">
-               <a href="#" class="login">LOGIN</a> <a href="#" class="mypage">MYPAGE</a>
+               <a href="#" class="login">LOGIN</a> 
+               <a href="#" class="mypage">MYPAGE</a>
+               <a href="#" class="mypage">ADMIN</a>
             </div>
             <div class="icons">
                <span class="icon-heart">&#10084;</span> <span class="icon-cart">&#128722;
