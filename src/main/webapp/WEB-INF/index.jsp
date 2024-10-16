@@ -76,6 +76,47 @@
            </div>
        </div>
    </section>
+   
+ 	<section class="menuList">
+       <div class="menu-container">
+           <div class="menu-column">
+               <h3>ABOUT US</h3>
+               <ul>
+                   <li>회사소개</li>
+                   <li>이용안내</li>
+                   <li>공지사항</li>
+                   <li>광고/제휴 문의</li>
+               </ul>
+           </div>
+           <div class="menu-column">
+               <h3>MEMBER</h3>
+               <ul>
+                   <li>로그인</li>
+                   <li>회원가입</li>
+                   <li>아이디찾기</li>
+                   <li>비밀번호찾기</li>
+               </ul>
+           </div>
+           <div class="menu-column">
+               <h3>MYPAGE</h3>
+               <ul>
+                   <li>주문목록/배송조회</li>
+                   <li>취소/반품/교환 내역</li>
+                   <li>환불/입금 내역</li>
+                   <li>찜리스트</li>
+               </ul>
+           </div>
+           <div class="menu-column">
+               <h3>HELP</h3>
+               <ul>
+                   <li>1:1문의</li>
+                   <li>FAQ</li>
+                   <li>상품문의</li>
+                   <li>고객센터</li>
+               </ul>
+           </div>
+       </div>
+   </section>
 
 <jsp:include page="footer.jsp" />
 
