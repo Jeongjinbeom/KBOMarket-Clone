@@ -29,4 +29,17 @@
 	<select id="getGoods" parameterType="String" resultType="goodsDTO">
 		select * from kbogoods where prdNo=#{prdNo}
 	</select>
+	
+	<select id="getReviewCount" parameterType="java.util.Map" resultType="reviewDTO">
+		select * from kboreview where prdNo=#{prdNo} limit #{startNum}, #{endNum}
+	</select>
+	
+	<select id="goodsTotalA" parameterType="String" resultType="int">
+		select count(*) from kboreview where prdNo=#{prdNo}
+	</select>
+	
+	<!-- Review -->
+	<select id="getUserName" parameterType="String" resultType="String">
+		select name from kbouser where userId = #{userId}
+	</select>
 </mapper>

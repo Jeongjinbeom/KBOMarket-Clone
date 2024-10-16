@@ -92,3 +92,46 @@
 	clear: both;
 	
 }
+
+
+/* 반응형 처리 */
+@media (max-width: 1200px) {
+	#goodsListDiv{
+		padding: 0 10px;
+	}
+    #history a {
+        font-size: 0.6em; /* 글꼴 크기 조정 */
+    }
+
+    #selectTeam {
+        font-size: 0.6em; /* 글꼴 크기 조정 */
+    }
+
+    .teamName {
+        font-size: 1.1em; /* 글꼴 크기 조정 */
+    }
+
+    #ctg span {
+        margin-right: 50px; /* 마진 조정 */
+    }
+}
+
+@media (max-width: 768px) {
+    #history a {
+        font-size: 0.5em; /* 더 작은 화면에서 글꼴 크기 조정 */
+    }
+
+    #selectTeam {
+        font-size: 0.5em; /* 더 작은 화면에서 글꼴 크기 조정 */
+    }
+
+    .teamName {
+        font-size: 1em; /* 더 작은 화면에서 글꼴 크기 조정 */
+    }
+
+    #ctg span {
+        display: block; /* 블록 형태로 변환 */
+        margin-right: 0; /* 마진 제거 */
+        margin-bottom: 10px; /* 아래 마진 추가 */
+    }
+}

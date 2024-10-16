@@ -1,5 +1,6 @@
 package goods.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import goods.bean.GoodsDTO;
+import goods.bean.ReviewDTO;
 import goods.service.GoodsService;
 
 @Controller
@@ -61,9 +63,20 @@ public class GoodsController {
 	}
 	
 	@RequestMapping(value="goodsDetail", method=RequestMethod.GET)
-	public String goodsDetail(@RequestParam String prdNo, Model model) {
+	public String goodsDetail(@RequestParam(required=false, defaultValue="1") String pg, @RequestParam String prdNo, Model model) {
 		
 		GoodsDTO goodsDTO = goodsService.getGoods(prdNo);
+		
+		Map<String, Object> map = goodsService.getReviewCount(prdNo, pg);
+		
+		List<ReviewDTO> reviewList = (List<ReviewDTO>) map.get("list");
+		
+		List<String> userNames = new ArrayList<>(); 
+		
+		for(ReviewDTO list : reviewList) {
+			String userName = goodsService.getUserName(list.getUserId());			
+			userNames.add(userName);
+		}
 		
 		String prdSize = goodsDTO.getPrdSize();
 		String[] sizesArray;
@@ -76,7 +89,33 @@ public class GoodsController {
 		
 		model.addAttribute("dto", goodsDTO);
 		model.addAttribute("sizesArray", sizesArray); // 배열 추가
+		model.addAttribute("reviewList", reviewList);
+		model.addAttribute("map", map); //list, reviewPaging, total
+		model.addAttribute("userNames", userNames);
+		model.addAttribute("pg", pg);
 		
 		return "goods/goodsDetail";
+	}
+	
+	@RequestMapping(value="goodsReview", method=RequestMethod.GET)
+	public String goodsReview(@RequestParam(required=false, defaultValue="1") String pg, @RequestParam String prdNo, Model model) {
+		
+		Map<String, Object> map = goodsService.getReviewCount(prdNo, pg);
+		
+		List<ReviewDTO> reviewList = (List<ReviewDTO>) map.get("list");
+		
+		List<String> userNames = new ArrayList<>(); 
+		
+		for(ReviewDTO list : reviewList) {
+			String userName = goodsService.getUserName(list.getUserId());			
+			userNames.add(userName);
+		}
+
+		model.addAttribute("reviewList", reviewList);
+		model.addAttribute("map", map); //list, reviewPaging, total
+		model.addAttribute("userNames", userNames);
+		model.addAttribute("pg", pg);
+		
+		return "goods/reviewForm";
 	}
 }

@@ -8,7 +8,6 @@ CREATE TABLE KBOOrder (
 	prdSize VARCHAR(50), -- 상품사이즈
 	qty INT NOT NULL CHECK (qty > 0), -- 상품개수
 	regDate DATETIME DEFAULT CURRENT_TIMESTAMP, -- 구매날짜
-	
 	FOREIGN KEY (prdNo) REFERENCES KBOGoods(prdNo),
 	FOREIGN KEY (userId) REFERENCES KBOUser(userId)
 );

@@ -6,6 +6,7 @@ CREATE TABLE KBOReview(
 	userId VARCHAR(100) NOT NULL, -- 회원아이디
 	reviewTitle VARCHAR(200), -- 후기제목
 	reviewContent TEXT NOT NULL, -- 후기내용
+	reviewScore INT DEFAULT 0,
 	likes INT DEFAULT 0, -- 후기 좋아요 수
 	regDate DATETIME DEFAULT CURRENT_TIMESTAMP, -- 등록날짜
 	

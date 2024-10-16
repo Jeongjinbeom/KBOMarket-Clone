@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KBOMarket</title>
 	<link rel="stylesheet" href="../css/index.css">
 	<link rel="stylesheet" href="../css/header.css">
@@ -38,8 +39,17 @@
 		<div id="detailContent">
 			<div class="views">조회수 ${dto.views }</div>
 			<div class="title"><pre>${dto.prdName }</pre></div>
-			<div class="tr" id="price"><span class="firsttd">판매가</span><span class="price">${dto.prdPrice } 원</span></div>
-			<div class="tr"><span class="firsttd">사이즈</span>${dto.prdSize }</div>
+			
+			<div class="tr" id="price">
+				<span class="firsttd">판매가</span>
+				<span class="price">
+					<fmt:formatNumber pattern="#,### 원" >${dto.prdPrice }</fmt:formatNumber>
+				</span>
+			</div>
+			<div class="tr">
+				<span class="firsttd">사이즈</span>
+				<span class="size">${dto.prdSize }</span>
+			</div>
 			<div class="tr" id="prdNo"><span class="firsttd">상품코드</span>${ dto.prdNo}</div>
 			
 			
@@ -54,9 +64,11 @@
 			    </select>
 			</div>
 			
+			<span id="prdNo" class="${dto.prdNo }"></span>
+			<span id="prdName" class="${dto.prdName }"></span>
+			<span id="prdPrice" class="${dto.prdPrice }"></span>
 			
 			<div id="orderDiv"></div>
-			
 			
 			<div id="detailBtnDiv">
 				<input type="button" id="cartBtn" value="장바구니"/>
@@ -68,77 +80,66 @@
 	<div id="detailDiv2">
 		<div id="ctgList">
 			<ul>
-				<li>상품상세정보</li>
-				<li>배송안내</li>
-				<li>교환 및 반품안내</li>
-				<li>상품후기()</li>
-				<li>상품문의()</li>
+				<li id="1">상품상세정보</li>
+				<li id="2">배송안내</li>
+				<li id="3">교환 및 반품안내</li>
+				<li id="4">상품후기 (${map.total })</li>
+				<li id="5">상품문의 (0)</li>
 			</ul>
 		</div>
-		<div id="ctgContentDiv"></div>
+		<div id="ctgContentDiv">
+			<jsp:include page="reviewForm.jsp"></jsp:include>
+		</div>
 	</div>
 
 	</div>
 	
+	<jsp:include page="../footer.jsp"></jsp:include>
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="../js/goodsDetail.js"></script>
 <script type="text/javascript">
-function selectSize(selectElement) {
-    const selectedValue = selectElement.value;
-    const orderDiv = document.getElementById('orderDiv');
+$(function(){
+	$('#orderBtn').click(function(){
+		$('#orderForm').submit();
+	})
+	
+	$('#ctgList ul li').eq(0).addClass('clickLi');
+	
+    $('#ctgList ul li').click(function() {
+        $('#ctgList ul li').removeClass('clickLi');
+        $(this).addClass('clickLi');
+        
+        const selectedId = $(this).attr('id');
+        
+        $('#ctgContentDiv > div').hide();
 
-    // 기존 폼 제거
-    orderDiv.innerHTML = '';
-
-    if (selectedValue) {
-    	console.log(selectedValue)
-        // orderForm 생성
-        orderDiv.innerHTML = `
-        	<div class="orderDiv">
-            <form id="orderForm">
-            <input type="hidden" name="prdNo" value="${dto.prdNo}" />
-	            <table id="orderTable">
-	            	<tr>
-	           			<td><span class="orderSizeTitle">${dto.prdName}(` + selectedValue + `)</span>
-	           				<input type="hidden" name="prdSize" id="orderPrdSize" value="` + selectedValue + `" /></td>
-	        			<td><input type="number" name="qty" id="qty" value="1" onchange="updatePrice()" /></td>
-		               	<td>
-				            <div class="buttonContainer">
-				                <button id="up" type="button" onclick="changeQuantity(1)">▲</button>
-				                <button id="down" type="button" onclick="changeQuantity(-1)">▼</button>
-				            </div>
-	               		<td><span id="displayPrice">${dto.prdPrice}</span></td>
-		            </tr>
-		        </table>
-            </form>
-            </div>
-        `;
-
-        updatePrice();
-    }
-}
-
-function updatePrice() {
-    const qty = document.getElementById('qty').value;
-    const price = parseFloat(document.getElementById('orderPrice').value);
-    const totalPrice = price * qty;
-    document.getElementById('displayPrice').textContent = totalPrice;
-}
-
-function changeQuantity(delta) {
-    const qtyInput = document.getElementById('qty');
-    let currentQty = parseInt(qtyInput.value, 10);
+        // 선택한 ID에 해당하는 reviewDiv만 보임
+        $('#reviewDiv' + selectedId).show();
+    });
     
-    // 수량을 증가시키거나 감소시킵니다.
-    currentQty += delta;
+    // 초기 상태에서 첫 번째 div 보이기
+    $('#ctgContentDiv > div').hide(); // 모든 div 숨기기
+    $('#reviewDiv1').show(); // 첫 번째 div 보이기
+})
 
-    // 수량이 1 미만이 되지 않도록 합니다.
-    if (currentQty < 1) {
-        currentQty = 1;
-    }
-
-    qtyInput.value = currentQty; // 업데이트된 수량을 입력 필드에 설정
-    updatePrice(); // 가격 업데이트
+function userPaging(i) {
+    $.ajax({
+        url: '/KBOMarket/goods/goodsReview',
+        type: 'GET',
+        data: {
+            pg: i,
+            prdNo: '${dto.prdNo}' // 현재 상품 번호 전달
+        },
+        success: function(response) {
+            // #ctgContentDiv의 내용을 업데이트
+            $('#ctgContentDiv').html(response);
+            $('#ctgContentDiv > div').hide();
+            $('#reviewDiv4').show();
+        },
+        error: function(xhr, status, error) {
+            console.error("AJAX Error:", status, error);
+        }
+    });
 }
 </script>
 </body>

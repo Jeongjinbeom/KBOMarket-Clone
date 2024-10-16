@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
 
 import goods.bean.GoodsDTO;
+import goods.bean.ReviewDTO;
 
 @Mapper
 public interface GoodsDAO {
@@ -21,5 +22,11 @@ public interface GoodsDAO {
 	public String getTeamName(String teamId);
 
 	public GoodsDTO getGoods(String prdNo);
+
+	public List<ReviewDTO> getReviewCount(Map<String, Object> map);
+
+	public String getUserName(String userId);
+
+	public int goodsTotalA(String prdNo);
 
 }
