@@ -11,13 +11,14 @@
 <body>
    <header>
       <div class="header-container">
-         <a href="#"><img
+         <a href="/KBOMarket/"><img
             src="https://cdn-pro-web-250-211.cdn-nhncommerce.com/keienkorea5_godomall_com/data/skin/front/awesome/img/banner/75490bc770a63d80d0c82184384406fc_38484.png"
             alt="KBO Market Logo" class="main-logo"></a>
 
          <div class="header-right">
             <div class="user-options">
-               <a href="#" class="login">LOGIN</a> <a href="#" class="mypage">MYPAGE</a>
+               <a href="/KBOMarket/user/loginForm" class="login">LOGIN</a> 
+               <a href="#" class="mypage">MYPAGE</a>
             </div>
             <div class="icons">
                <span class="icon-heart">&#10084;</span> <span class="icon-cart">&#128722;
