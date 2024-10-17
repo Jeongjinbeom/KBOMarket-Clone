@@ -75,6 +75,28 @@
 				</tr>
 			</table>
 		</div>
+		
+		<div id="deliveryInfoDiv">
+			<div id="deliveryInfoTitle">배송정보</div>
+			<table>
+				<tr>
+					<td>받으실분</td>
+					<td><input type="text" id="name" name="name" value="${userDTO.name }"/></td>
+				</tr>
+				<tr>
+					<td>주소</td>
+					<td>[${userDTO.zipcode }] ${userDTO.addr1 } ${userDTO.addr2}</td>
+				</tr>
+				<tr>
+					<td>휴대폰번호</td>
+					<td><input type="text" id="tel" name="tel" value="${userDTO.tel }"/></td>
+				</tr>
+				<tr>
+					<td>이메일</td>
+					<td><input type="text" id="email" name="email" value="${userDTO.email }"/></td>
+				</tr>
+			</table>
+		</div>
 	</div>
 
 </div>
