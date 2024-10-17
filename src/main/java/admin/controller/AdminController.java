@@ -119,9 +119,9 @@ public class AdminController {
 	}
 	
 	 @RequestMapping(value="admin/deleteAdminList", produces = "text/html; charset=UTF-8")
-	 @ResponseBody
-	 public void deleteAdminList(@RequestParam String[] check) {
+	 public String deleteAdminList(@RequestParam String[] check) {
 		 adminService.deleteAdminList(check);
+		 return "admin/adminList";
 	 }
 	
 }

@@ -82,7 +82,7 @@
             
             <div class="signup-btn-group">
                 <button type="reset" class="signup-btn signup-btn-secondary">취소</button>
-                <button type="button" class="signup-btn signup-btn-primary" id="joinBtn">회원가입</button>
+                <button class="signup-btn signup-btn-primary" id="joinBtn">회원가입</button>
             </div>
         </form>
     </div>
