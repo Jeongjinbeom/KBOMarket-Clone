@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KBO마켓 : 로그인</title>
-<link rel="stylesheet" href="../css/writeForm.css">
+<link rel="stylesheet" href="../css/loginForm.css">
 <link rel="stylesheet" href="../css/index.css">
 <link rel="stylesheet" href="../css/header.css">
 </head>
@@ -23,30 +23,31 @@
     <!-- 실선 아래 간격 조절  -->
     	<div class="sub_content"></div>
     	 <div class="signup-container">
-        <h1>로그인</h1>
-        <form action="#" method="post" class="signup-form">
-            <div class="signup-form-group">
-                <label for="userId" class="signup-label">아이디</label>
-                <input type="text" id="userId" name="userId" required class="signup-input" style="width: 100%; max-width: 400px;">
-                <input type="hidden" id="checkid" value="">
-            </div>
-            <div class="signup-form-group">
-                <label for="pwd" class="signup-label">비밀번호</label>
-                <input type="password" id="pwd" name="pwd" required class="signup-input" style="width: 100%; max-width: 350px;">
-            </div>
-            
-            <div class="signup-btn-group">
-                <button type="button" class="signup-btn signup-btn-secondary">회원가입</button>
-                <button type="submit" class="signup-btn signup-btn-primary">로그인</button>
-            </div>
-        </form>
- 		</form>
- 		
+	        <h1>로그인</h1>
+	        <form class="signup-form" id="userLoginForm" name="userLoginForm">
+	            <div class="signup-form-group">
+	                <label for="userId" class="signup-label">아이디</label>
+	                <input type="text" id="userId" name="userId" required class="signup-input" style="width: 100%; max-width: 250px;">
+	                 <div id="checkidDiv"></div>
+	            </div>
+	            <div class="signup-form-group">
+	                <label for="pwd" class="signup-label">비밀번호</label>
+	                <input type="password" id="pwd" name="pwd" required class="signup-input" style="width: 100%; max-width: 250px;">
+		            <div id="checkpwdDiv"></div>
+	            </div>
+	            <div class="signup-btn-group">
+	                <button type="button" class="signup-btn signup-btn-secondary" onclick="location.href='/KBOMarket/user/writeForm'">회원가입</button>
+	                <button type="button" class="signup-btn signup-btn-primary" id="loginBtn">로그인</button>
+	            </div>
+	            <div class="signup-btn-group">
+	                <button type="button" class="signup-btn signup-btn-secondary">   카카오로그인   </button>
+	            </div>
+
+	        </form>	
+		</div>
 	</div>
 	<!-- 아래 간격 조절  -->
-	<div>
-    	<div class="sub_content"></div>
-	</div>
+	<div class="sub_content"></div>
 </section>
 
 	<footer>
@@ -59,7 +60,9 @@
 		</span>
 	</footer>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script type="text/javascript" src="../js/writeForm.js"></script>
+<script type="text/javascript" src="../js/loginForm.js"></script>
+<script type="text/javascript">
+
+</script>
 </body>
 </html>

@@ -63,12 +63,12 @@ a:hover { color:blue; }
   flex-direction: column;
   width: 100%;
   max-width: 500px;
-  
 }
 
 .signup-form-group {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .signup-label {

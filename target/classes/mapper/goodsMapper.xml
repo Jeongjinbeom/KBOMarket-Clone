@@ -30,6 +30,30 @@
 		select * from kbogoods where prdNo=#{prdNo}
 	</select>
 	
+	<select id="getReviewCount" parameterType="java.util.Map" resultType="reviewDTO">
+		select * from kboreview where prdNo=#{prdNo} limit #{startNum}, #{endNum}
+	</select>
+	
+	<select id="goodsTotalA" parameterType="String" resultType="int">
+		select count(*) from kboreview where prdNo=#{prdNo}
+	</select>
+	
+	<update id="updateViews" parameterType="String">
+		update kbogoods set views = views + 1 where prdNo=#{prdNo}
+	</update>
+	
+	<!-- Review -->
+	<select id="getUserName" parameterType="String" resultType="String">
+		select name from kbouser where userId = #{userId}
+	</select>
+	
+	<update id="reviewLike" parameterType="int">
+		update kboreview set likes = likes + 1 where reviewNo=#{reviewNo}
+	</update>
+	
+	
+	
+	
 	
 	<!-- 상품 등록 -->
 	<insert id="goodsWrite">

@@ -2,6 +2,7 @@
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:prop="http://www.springframework.org/schema/beans/properties"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
@@ -22,6 +23,7 @@
 		<beans:property name="maxUploadSize" value="5000000"/><!-- 5MB -->
 	</beans:bean>
 	
+	
 		
 	<resources location="/WEB-INF/css/" mapping="/css/**"></resources>
 	<resources location="/WEB-INF/js/" mapping="/js/**"></resources>
@@ -34,6 +36,24 @@
 	<context:component-scan base-package="admin.controller"/>
 	<context:component-scan base-package="goods.controller"/>
 	
-	
-	
+	<!-- 이메일 -->
+
+<!--     <beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <beans:property name="host" value="smtp.naver.com"/>
+        <beans:property name="port" value="465"/>
+        <beans:property name="username" value="gustlr887@naver.com"/>
+        <beans:property name="password" value="orakard1@#"/> 실제 비밀번호로 변경
+        <beans:property name="defaultEncoding" value="UTF-8"/>
+        <beans:property name="javaMailProperties">
+            <beans:props>
+                <beans:prop key="mail.smtp.auth">true</beans:prop>
+                <beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
+                <beans:prop key="mail.smtp.ssl.enable">true</beans:prop>
+                <beans:prop key="mail.smtp.ssl.trust">smtp.naver.com</beans:prop>
+                <beans:prop key="mail.debug">true</beans:prop>
+            </beans:props>
+        </beans:property>
+     </beans:bean> -->
 </beans:beans>
+           
+ 

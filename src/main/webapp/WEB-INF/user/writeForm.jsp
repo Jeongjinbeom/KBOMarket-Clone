@@ -24,7 +24,7 @@
     
     <div class="signup-container">
         <h1>회원가입</h1>
-        <form class="signup-form">
+        <form class="signup-form" id="userWriteForm" name="userWriteForm">
         	<div class="signup-form-group">
                 <label for="userId" class="signup-label">아이디</label>
                 <input type="text" id="userId" name="userId" required class="signup-input" style="width: 100%; max-width: 400px;">
@@ -37,29 +37,29 @@
             </div>
             <div class="signup-form-group">
                 <label for="repwd" class="signup-label">비밀번호확인</label>
-                <input type="password" id="repwd" name="repwd" required class="signup-input" style="width: 100%; max-width: 350px;">
+                <input type="password" id="repwd" required class="signup-input" style="width: 100%; max-width: 350px;">
            		<div id="repwdDiv"></div>
             </div>
             <div class="signup-form-group">
                 <label for="name" class="signup-label">이름</label>
-                <input type="text" id="name" name="name" required class="signup-input"  style="width: 100%; max-width: 300px;">
-                <div id="check1" class="check"></div>
+                <input type="text" id="name" name="name" required class="signup-input"  style="width: 100%; max-width: 350px;">
+                <div id="nameDiv"></div>
             </div>
             
             <div class="signup-form-group">
                 <label for="email" class="signup-label">이메일</label>
-                <input type="text" id="email" name="email" required class="signup-input"  style="width: 100%; max-width: 300px;">
-                <input type="button" id="emailcheck" name="emailcheck" value="인증번호 발송" class="signup-btn signup-btn-secondary">
-                <div id="check1" class="check"></div>
-            </div>
+                <input type="text" id="email" name="email" required class="signup-input"  style="width: 100%; max-width: 320px;">
+                <input type="button" id="sendVerificationBtn" value="인증번호 발송" class="signup-btn signup-btn-secondary">
+                <div id="emailDiv"></div>
+            </div> 
             
             <div class="signup-form-group">
-                <label for="emailcheck" class="signup-label">이메일 인증</label>
-                <input type="text" id="emailchecknum" name="emailchecknum" required class="signup-input" style="width: 100%; max-width: 300px;"> 
-                <input type="button" id="emailchecknum2" value="인증번호 확인" class="signup-btn signup-btn-secondary">
-                <input type="hidden" id="authCode" name="authCode">
-                <div id="check2" class="check"></div>
+                <label for="verificationCode" class="signup-label">이메일 인증</label>
+                <input type="text" id="verificationCode" required class="signup-input" style="width: 100%; max-width: 320px;"> 
+                <input type="button" id="verifyCodeBtn" value="인증번호 확인" class="signup-btn signup-btn-secondary" required>
+                <div id="emailcheckDiv"></div>
             </div>
+
   
             <div class="signup-form-group">
                 <label for="tel" class="signup-label">휴대폰번호</label>
@@ -68,21 +68,21 @@
             
             <div class="signup-form-group">
                 <label for="phone" class="signup-label">주소</label>
-                <input type="text" name="zipcode" id="zipcode" size="6" required class="signup-input" style="width: 100%; max-width: 200px;"/>
-                <input type="button" value="우편번호 검색" onclick="checkPost()" class="signup-btn signup-btn-secondary">
+                <input type="text" name="zipcode" id="zipcode" size="6" required class="signup-input" style="width: 100%; max-width: 250px;"/>
+                <input type="button" value="우편번호 검색" onclick="checkPost(); return false;" class="signup-btn signup-btn-secondary">
 			</div>
 			<div class="signup-form-group">
                 <input type="text" id="addr1" name="addr1" placeholder="주소"
-              		readonly required class="signup-input" style="width: 100%; max-width: 450px;">
+              		readonly required class="signup-input" style="width: 100%; max-width: 550px;">
             </div>
             <div class="signup-form-group">
               	<input type="text"id="addr2" name="addr2" placeholder="상세주소" 
-              	required class="signup-input" style="width: 100%; max-width: 450px;">
+              	required class="signup-input" style="width: 100%; max-width: 550px;">
             </div>
             
             <div class="signup-btn-group">
-                <button type="button" class="signup-btn signup-btn-secondary">취소</button>
-                <button type="submit" class="signup-btn signup-btn-primary">회원가입</button>
+                <button type="reset" class="signup-btn signup-btn-secondary">취소</button>
+                <button type="button" class="signup-btn signup-btn-primary" id="joinBtn">회원가입</button>
             </div>
         </form>
     </div>
@@ -101,7 +101,28 @@
 		</span>
 	</footer>
 	
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> 
 <script type="text/javascript" src="../js/writeForm.js"></script>
+<!-- 우편번호 -->
+<script>
+function checkPost() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+            var addr = ''; 
+            
+            if (data.userSelectedType === 'R') {
+                addr = data.roadAddress;
+            } else {
+                addr = data.jibunAddress;
+            }
+
+            document.getElementById('zipcode').value = data.zonecode;
+            document.getElementById('addr1').value = addr;
+            document.getElementById('addr2').focus();
+        }
+    }).open();
+}
+</script>
 </body>
 </html>

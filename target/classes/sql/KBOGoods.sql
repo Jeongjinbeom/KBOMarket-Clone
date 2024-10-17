@@ -7,7 +7,6 @@ CREATE TABLE KBOGoods (
 	prdName VARCHAR(200) NOT NULL, -- 상품명
 	prdPrice DECIMAL(10, 2) NOT NULL CHECK (prdPrice >= 0), -- 상품가격
 	prdSize VARCHAR(50) DEFAULT 'original', -- 상품사이즈
-	playerName VARCHAR(100), -- 선수이름
 	qty INT DEFAULT 0, -- 상품개수
     imageFileName VARCHAR(100) not null,
 	imageOriginalFileName VARCHAR(100) not null,
