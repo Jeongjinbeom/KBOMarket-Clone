@@ -33,4 +33,12 @@ public interface GoodsDAO {
 
 	public void reviewLike(int reviewNo);
 
+	public void goodsWrite(List<GoodsDTO> imageUploadList);
+
+	public List<GoodsDTO> getAdminList();
+
+	public String getImageFileName(int parseInt);
+
+	public void deleteAdminList(List<String> list);
+
 }

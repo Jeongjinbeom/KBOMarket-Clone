@@ -112,6 +112,12 @@
 		    <version>1.5</version>
 		</dependency>
 		
+		<!-- 클라우드 설정 -->
+		<dependency>
+		    <groupId>com.amazonaws</groupId>
+		    <artifactId>aws-java-sdk-s3</artifactId>
+		    <version>1.12.610</version>
+		</dependency>
 		
 		<!-- lombok -->
 		<dependency>

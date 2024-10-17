@@ -66,7 +66,7 @@
 	    <c:if test="${list != null}">
 	    <c:forEach items="${list }" var="item">
 		    <div class="product-item" onclick="location.href='/KBOMarket/goods/goodsDetail?prdNo=${item.prdNo}'">
-		        <img src="${item.imageFileName}" width="220" alt="${item.prdName}" title="${item.prdName}" class="middle">
+		        <img src="https://kr.object.ncloudstorage.com/bitcamp-9th-bucket-138/storage/${item.imageFileName}" width="220" alt="${item.prdName}" title="${item.prdName}" class="middle">
 		        <h3>${item.prdName}</h3>
 		        <p class="price"><fmt:formatNumber pattern="#,### 원">${item.prdPrice}</fmt:formatNumber></p>
 		    </div>
