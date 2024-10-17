@@ -22,4 +22,12 @@ public interface GoodsDAO {
 
 	public GoodsDTO getGoods(String prdNo);
 
+	public void goodsWrite(List<GoodsDTO> imageUploadList);
+
+	public List<GoodsDTO> getAdminList();
+
+	public String getImageFileName(int parseInt);
+
+	public void deleteAdminList(List<String> list);
+
 }

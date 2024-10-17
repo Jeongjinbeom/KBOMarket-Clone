@@ -34,7 +34,7 @@
 	
 	
 	<div id="detailDiv1">
-		<div id="detailImage"><img src="../image/${dto.imageFileName }" class="detailImg"/></div>
+		<div id="detailImage"><img src="https://kr.object.ncloudstorage.com/bitcamp-9th-bucket-138/storage/${dto.imageFileName }" class="detailImg"/></div>
 		<div id="detailContent">
 			<div class="views">조회수 ${dto.views }</div>
 			<div class="title"><pre>${dto.prdName }</pre></div>

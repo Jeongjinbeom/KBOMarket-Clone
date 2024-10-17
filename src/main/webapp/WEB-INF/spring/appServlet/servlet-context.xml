@@ -11,7 +11,6 @@
 	<annotation-driven/>
 	
 	<context:component-scan base-package="com.controller.KBOMarket"></context:component-scan>
-	<context:component-scan base-package="admin.controller"></context:component-scan>
 
 	
 	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -32,7 +31,8 @@
 
 	<!-- controller Bean 설정 -->
 	<context:component-scan base-package="user.controller" />
-	<context:component-scan base-package="goods.controller"></context:component-scan>
+	<context:component-scan base-package="admin.controller"/>
+	<context:component-scan base-package="goods.controller"/>
 	
 	
 	

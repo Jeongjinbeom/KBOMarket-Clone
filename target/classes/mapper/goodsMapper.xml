@@ -29,4 +29,32 @@
 	<select id="getGoods" parameterType="String" resultType="goodsDTO">
 		select * from kbogoods where prdNo=#{prdNo}
 	</select>
+	
+	
+	<!-- 상품 등록 -->
+	<insert id="goodsWrite">
+		insert into KBOGoods(teamId, ctg, prdName, prdPrice, prdSize, qty, imageFileName, imageOriginalFileName)
+		values 
+		<foreach collection="list" item="dto" separator=",">
+			(#{dto.teamId}, #{dto.ctg}, #{dto.prdName}, #{dto.prdPrice}, #{dto.prdSize}, #{dto.qty}, #{dto.imageFileName}, #{dto.imageOriginalFileName})
+		</foreach>
+	</insert>
+	<!-- 상품 등록 목록 가져가기 -->
+	<select id="getAdminList" resultType="goodsDTO">
+		select * from KBOGoods order by prdNo desc
+	</select>
+	
+	<!-- 이미지 파일 이름 얻기 -->
+	<select id="getImageFileName" parameterType="int" resultType="String">
+		select imageFileName from KBOGoods where prdNo = #{prdNo}
+	</select>
+	
+	<!-- 삭제 -->
+	<delete id="deleteAdminList">
+		delete from KBOGoods where imageFileName in
+		<foreach collection="list" item="str" open="(" close= ")" separator=",">
+			#{str}
+		</foreach>
+	</delete>
+	
 </mapper>
