@@ -9,5 +9,18 @@
  	<select id="getExistId" parameterType="String" resultType="userDTO">
  		select * from KBOUser where userId=#{userId}
  	</select>
- 
+ 	
+ 	<!-- 회원가입 -->
+ 	<insert id="join" parameterType="userDTO">
+		insert into KBOUser (userId, name, pwd, email, tel, zipcode, addr1, addr2) 
+		values(#{userId}, #{name}, #{pwd},
+			#{email}, #{tel}, #{zipcode}, #{addr1}, #{addr2})
+	</insert>
+	
+	<!-- 로그인 -->
+	<select id="login" parameterType="java.util.Map" resultType="userDTO">
+		select * from KBOUser where userId = #{userId} and pwd = #{pwd}
+	</select>
+	
+	<!--  -->
  </mapper>

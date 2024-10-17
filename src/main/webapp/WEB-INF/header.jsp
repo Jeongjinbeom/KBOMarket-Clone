@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
    <header>
       <div class="header-container">
@@ -9,7 +10,14 @@
 
          <div class="header-right">
             <div class="user-options">
-               <a href="/KBOMarket/user/loginForm" class="login">LOGIN</a> 
+				<c:if test="${not empty sessionScope.name}">
+        			<p>${sessionScope.name}님</p>
+        			<a href="/KBOMarket/logout" class="logout">LOGOUT</a>
+   			 	</c:if>
+    
+			    <c:if test="${empty sessionScope.name}">
+			        <a href="/KBOMarket/user/loginForm" class="login">LOGIN</a>
+			    </c:if>
                <a href="#" class="mypage">MYPAGE</a>
             </div>
             <div class="icons">
@@ -18,7 +26,6 @@
             </div>
          </div>
       </div>
-
       <div class="team-logos">
          <a href="#" class="logos"><img
             src="https://cdn-pro-web-250-211.cdn-nhncommerce.com/keienkorea5_godomall_com/data/category/012_cateImg_goods.png"
