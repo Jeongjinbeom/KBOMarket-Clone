@@ -332,6 +332,15 @@
 	#history{
 		padding-left: 10px;
 	}
+	#goodsDetailDiv{
+		padding: 0 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	#history{
+		padding-left: 10px;
+	}
     #detailDiv1 {
         flex-direction: column; /* 세로 정렬 */
     }
@@ -359,9 +368,6 @@
     #detailDiv2 ul li {
         width: 50%; /* 리스트 항목의 너비 조정 */
     }
-}
-
-@media (max-width: 768px) {
     #selectTeam {
         width: 80%; /* 팀 선택 박스 너비 조정 */
     }

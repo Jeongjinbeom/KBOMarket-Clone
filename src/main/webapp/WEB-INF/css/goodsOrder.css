@@ -1,0 +1,230 @@
+@charset "UTF-8";
+#history{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+
+#history a{
+	color: #888;
+	text-decoration: none;
+	font-size: 0.7em;
+	margin-right: 8px;
+}
+
+#history a:hover{
+	text-decoration: underline;
+}
+
+#history span{
+	margin-right: 8px;
+	color: #888;
+	text-decoration: none;
+	font-size: 0.7em;
+}
+
+#orderDiv{
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+	margin-top: 20px;
+}
+
+#orderTitle{
+	width:100%; height: 50px;
+	border-bottom: 1px solid #ccc;
+}
+
+#orderTitle #title1{
+	font-size: 1.3em; font-weight: 700;
+	color: #333;
+}
+
+#orderTitle #title2{
+	float: right;
+	font-size: 0.8em;
+	line-height: 50px;
+}
+
+#orderTitle .titleSpan{
+	font-weight: 700;
+	font-size: 1.1em;
+	color: #b8874d;
+}
+
+
+#detailOrderDiv, #orderTotalPriceDiv, #orderInfoDiv, #orderBtnDiv{
+	width: 100%;
+	max-width: 1200px;
+	margin-top: 20px;
+	font-size: 1.0em;
+}
+
+table{
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+#detailOrderDiv table th{
+	padding: 10px;
+	background: #333;
+	color: #fff;
+}
+
+#detailOrderDiv .img{
+	width: 80px;
+}
+
+#detailOrderDiv .prdname{
+	width: 40%;
+	font-size: 0.9em;
+	text-align: left;
+}
+
+#detailOrderDiv .prdname .option{
+	padding-top: 3px;
+	font-size: 0.8em;
+	color: #ccc;
+}
+
+#detailOrderDiv #orderPrdImage{
+	width: 80px;
+}
+
+
+#orderTotalPriceDiv{
+	margin-top: 50px;
+}
+
+#orderTotalPriceDiv table{
+	border: 1px solid #333;
+	padding: 10px;
+}
+
+#orderTotalPriceDiv table th{
+	padding-top: 20px;
+}
+
+#orderTotalPriceDiv table td{
+	padding-bottom: 20px;
+}
+
+#orderTotalPriceDiv table th:nth-child(1),
+#orderTotalPriceDiv table td:nth-child(1){
+	width: 60%;
+}
+
+#orderTotalPriceDiv table th:nth-child(3),
+#orderTotalPriceDiv table th:nth-child(5){
+	padding: 0;
+}
+
+#orderTotalPriceDiv table th:nth-child(2){
+	width: 15%;
+}
+#orderTotalPriceDiv table td:nth-child(2),
+#orderTotalPriceDiv table td:nth-child(3),
+#orderTotalPriceDiv table td:nth-child(4){
+	font-size: 1.1em; font-weight:700;
+	color:#b8874d;
+}
+
+
+
+#orderInfoDiv, #deliveryInfoDiv{
+	margin-top: 50px;
+}
+
+#orderInfoDiv table, #deliveryInfoDiv table{
+	text-align: left;
+	border: 0px;
+}
+
+#orderInfoDiv #orderInfoTitle, #deliveryInfoDiv #deliveryInfoTitle{
+	height: 50px; line-height: 50px;
+	font-size: 1.0em; font-weight: 700;
+}
+
+#orderInfoDiv table td, #deliveryInfoDiv table td{
+	padding: 15px;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+}
+
+#orderInfoDiv table td:nth-child(1),
+#deliveryInfoDiv table td:nth-child(1){
+	width: 15%;
+	background: #333;
+	color: #fff;
+}
+
+#deliveryInfoDiv table input[type="text"]{
+	width: 250px; height: 40px;
+	border:1px solid #ccc;
+	outline: none;
+	padding-left: 10px;
+}
+
+#deliveryInfoDiv table input[type="text"]:focus{
+	border:1px solid tomato;
+}
+
+#deliveryInfoDiv table #zipcode{
+	margin-bottom: 10px;
+}
+
+#deliveryInfoDiv table #addr1{
+	width: 300px;
+}
+
+#deliveryInfoDiv table #addr2{
+	width: 300px;
+}
+
+#deliveryInfoDiv table .btn{
+	width: 100px; height: 35px;
+	margin-left: 20px;
+	background: #333; color: #fff;
+	border: 0px; border-radius: 5px;
+	cursor: pointer;
+}
+
+#finalPriceDiv{
+	margin-top: 80px; padding: 30px;
+	border: 1px solid #333;
+	color: #333;
+	text-align: right;
+}
+
+#finalPriceDiv span:nth-child(1){
+	font-size: 1.0em; font-weight: 400;
+	margin-right: 30px;
+}
+#finalPriceDiv span:nth-child(2){
+	font-size: 1.4em; font-weight: 700; 
+}
+
+#orderBtnDiv{
+	text-align: center;
+}
+#orderBtnDiv #orderBtn{
+	margin: 50px 0;
+	width: 250px; height: 50px;
+	background: #333; color: #fff;
+	cursor: pointer;
+	font-size: 1.2em; font-weight: 700;
+	border: 0;
+}
+#orderBtnDiv #orderBtn:hover{
+	background: #888;
+	
+}
+
+.errorDiv{
+	font-size: 0.8em;
+	padding-top: 10px;
+	color: tomato;
+}

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+#allDeleteBtn{
+	float: left;
+	margin:5px 0 0 10px;
+}
+
+#deleteBtn{
+	margin-top: 30px;
+	padding: 10px 20px;
+	background: #333;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+}
+
+#deleteBtn:hover{
+	background: #888;
+}
+#delBtn{
+	padding: 5px 25px;
+	border: 0;
+	color: #fff;
+	margin-bottom: 20px;
+	float: right;
+	text-align: center;
+	background: #333;
+}
