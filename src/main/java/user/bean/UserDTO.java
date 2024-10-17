@@ -18,4 +18,11 @@ public class UserDTO {
 	private String addr2;
 	private Date logtime;
 	
+	
+	@Override
+	public String toString() {
+		return userId + "\t" + name + "\t" + pwd
+			+ "\t" + email + "\t" + tel + "\t" + zipcode
+			+ "\t" + addr1 + "\t" + addr2 + "\t" + logtime;
+	}
 }

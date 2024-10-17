@@ -12,6 +12,7 @@
 	<!-- service, bean Bean 설정 / dao는 SpringConfiguration에 @Mapper('') 설정-->
 	<context:component-scan base-package="user.service.impl"/>
 	<context:component-scan base-package="user.bean"/>
+<!-- 	<context:component-scan base-package="user.service"/> -->
 	
 	<context:component-scan base-package="goods.service.impl"/>
 	<context:component-scan base-package="goods.bean"/>

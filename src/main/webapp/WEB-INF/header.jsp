@@ -1,14 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>   
-<link rel="stylesheet" href="./css/header.css">
-</head>
-<body>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
    <header>
       <div class="header-container">
          <a href="/KBOMarket/"><img
@@ -17,7 +9,14 @@
 
          <div class="header-right">
             <div class="user-options">
-               <a href="/KBOMarket/user/loginForm" class="login">LOGIN</a> 
+				<c:if test="${not empty sessionScope.name}">
+        			<p>${sessionScope.name}님</p>
+        			<a href="/KBOMarket/user/logout" class="logout">LOGOUT</a>
+   			 	</c:if>
+    
+			    <c:if test="${empty sessionScope.name}">
+			        <a href="/KBOMarket/user/loginForm" class="login">LOGIN</a>
+			    </c:if>
                <a href="#" class="mypage">MYPAGE</a>
             </div>
             <div class="icons">
@@ -26,7 +25,6 @@
             </div>
          </div>
       </div>
-
       <div class="team-logos">
          <a href="#" class="logos"><img
             src="https://cdn-pro-web-250-211.cdn-nhncommerce.com/keienkorea5_godomall_com/data/category/012_cateImg_goods.png"
@@ -56,5 +54,3 @@
             class="search-bar">
       </div>
    </header>
-</body>
-</html>
