@@ -1,8 +1,10 @@
 package goods.service;
 
 import java.util.List;
+import java.util.Map;
 
 import goods.bean.GoodsDTO;
+import goods.bean.ReviewDTO;
 
 public interface GoodsService {
 
@@ -17,5 +19,13 @@ public interface GoodsService {
 	public String getTeamName(String teamId);
 
 	public GoodsDTO getGoods(String prdNo);
+
+	public Map<String, Object> getReviewCount(String prdNo, String pg);
+
+	public String getUserName(String userId);
+
+	public void updateViews(String prdNo);
+
+	public void reviewLike(int reviewNo);
 
 }

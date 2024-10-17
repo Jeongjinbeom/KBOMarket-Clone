@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>KBOMarket</title>
 	<link rel="stylesheet" href="../css/index.css">
 	<link rel="stylesheet" href="../css/header.css">
@@ -61,27 +63,24 @@
 	<div id="productListDiv">
 	<section class="productList">
 	    <div class="product-grid">
-	    
+	    <c:if test="${list != null}">
 	    <c:forEach items="${list }" var="item">
 		    <div class="product-item" onclick="location.href='/KBOMarket/goods/goodsDetail?prdNo=${item.prdNo}'">
-		        <img src="${item.imageFileName}" width="220" alt="${item.prdName}" title="${item.prdName}" class="middle">
+		        <img src="https://kr.object.ncloudstorage.com/bitcamp-9th-bucket-138/storage/${item.imageFileName}" width="220" alt="${item.prdName}" title="${item.prdName}" class="middle">
 		        <h3>${item.prdName}</h3>
-		        <p class="price">${item.prdPrice}원</p>
+		        <p class="price"><fmt:formatNumber pattern="#,### 원">${item.prdPrice}</fmt:formatNumber></p>
 		    </div>
 	    </c:forEach>
-	    
+	    </c:if>
+	    <c:if test="${list == null || empty list}">
+	    	상품이 없습니다.
+	    </c:if>
 	   </div>
 	</section>
 	</div>	
 	
 	</div>
 	
-<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-<!-- <script type="text/javascript" src="../js/goodsList.js"></script> -->
-<script type="text/javascript">
-$(function(){
-	
-})
-</script>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

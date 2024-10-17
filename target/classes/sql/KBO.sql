@@ -8,6 +8,7 @@ CREATE TABLE KBOUser (
 	pwd VARCHAR(200), -- 비밀번호
 	email VARCHAR(200) NOT NULL UNIQUE, -- 이메일
 	tel VARCHAR(15), -- 휴대폰번호
+	zipcode VARCHAR(30), -- 우편번호
 	addr1 VARCHAR(255), -- 도로명주소
 	addr2 VARCHAR(255), -- 상세주소
 	regDate DATETIME DEFAULT CURRENT_TIMESTAMP -- 등록날짜
@@ -42,7 +43,6 @@ CREATE TABLE KBOGoods (
 	prdName VARCHAR(200) NOT NULL, -- 상품명
 	prdPrice DECIMAL(10, 2) NOT NULL CHECK (prdPrice >= 0), -- 상품가격
 	prdSize VARCHAR(50) DEFAULT 'original', -- 상품사이즈
-	playerName VARCHAR(100), -- 선수이름
 	qty INT DEFAULT 0, -- 상품개수
 	imageFileName VARCHAR(100) not null,
 	imageOriginalFileName VARCHAR(100) not null,
@@ -84,8 +84,10 @@ CREATE TABLE KBOCart (
 DROP TABLE KBOOrder;
 CREATE TABLE KBOOrder (
 	ordNo INT PRIMARY KEY AUTO_INCREMENT, -- 구매번호
-	prdNo INT NOT NULL, -- 상품번호
 	userId VARCHAR(100) NOT NULL, -- 회원아이디
+	prdNo INT NOT NULL, -- 상품번호
+	prdPrice VARCHAR(50), -- 상품가격
+	prdSize VARCHAR(50), -- 상품사이즈
 	qty INT NOT NULL CHECK (qty > 0), -- 상품개수
 	regDate DATETIME DEFAULT CURRENT_TIMESTAMP, -- 구매날짜
 	

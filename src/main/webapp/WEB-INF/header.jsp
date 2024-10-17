@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
    <header>
       <div class="header-container">
          <a href="/KBOMarket/"><img
@@ -11,7 +12,7 @@
             <div class="user-options">
 				<c:if test="${not empty sessionScope.name}">
         			<p>${sessionScope.name}님</p>
-        			<a href="/KBOMarket/user/logout" class="logout">LOGOUT</a>
+        			<a href="/KBOMarket/logout" class="logout">LOGOUT</a>
    			 	</c:if>
     
 			    <c:if test="${empty sessionScope.name}">
