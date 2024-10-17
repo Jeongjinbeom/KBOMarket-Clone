@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="../css/index.css">
 	<link rel="stylesheet" href="../css/header.css">
 	<link rel="stylesheet" href="../css/goodsDetail.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=thumb_up" />
+	
 </head>
 <body>
 	<jsp:include page="../header.jsp" />
@@ -50,13 +52,13 @@
 				<span class="firsttd">사이즈</span>
 				<span class="size">${dto.prdSize }</span>
 			</div>
-			<div class="tr" id="prdNo"><span class="firsttd">상품코드</span>${ dto.prdNo}</div>
+			<div class="tr" id="prdNoDiv"><span class="firsttd">상품코드</span>${ dto.prdNo}</div>
 			
 			
 			<div class="selectSize">
-			    <span class="firsttd">사이즈</span>
+			    <span class="firsttd">옵션</span>
 			    <select name="prdSizeSelect" id="prdSizeSelect" onchange="selectSize(this)">
-			        <option value="" selected disabled>사이즈를 선택하세요</option>
+			        <option value="" selected disabled>옵션을 선택하세요</option>
 			        <option value="" disabled>-------------------------</option>
 			        <c:forEach var="size" items="${sizesArray}">
 			            <option value="${size}">${size}</option>
@@ -71,8 +73,8 @@
 			<div id="orderDiv"></div>
 			
 			<div id="detailBtnDiv">
-				<input type="button" id="cartBtn" value="장바구니"/>
-				<input type="button" id="orderBtn" value="바로 구매"/>
+				<input type="button" id="cartBtn" onclick="cart()" value="장바구니"/>
+				<input type="button" id="orderBtn" onclick="buy()"value="바로 구매"/>
 			</div>
 		</div>
 	</div>
@@ -140,6 +142,41 @@ function userPaging(i) {
             console.error("AJAX Error:", status, error);
         }
     });
+}
+
+function cart(){
+	if ($('#orderForm').length === 0) {
+        alert('옵션을 선택해 주세요.');
+        return;
+    }
+	
+    $.ajax({
+        url: '/KBOMarket/order/insertCart',
+        type: 'post',
+        data: $('#orderForm').serialize(),
+        success: function(data) {
+        	
+        	if(data === "true"){
+        		let result = confirm('장바구니에 담았습니다.\n장바구니로 이동하시겠습니까?');
+        		if(result) location.href='/KBOMartket/order/cartForm';   
+        	}else{
+        		alert('로그인이 필요합니다.');
+        		location.href="/KBOMarket/user/loginForm";
+        	}
+        },
+        error: function(e) {
+            console.error(e);
+        }
+    });
+}
+
+function buy(){
+	if ($('#orderForm').length === 0) {
+        alert('옵션을 선택해 주세요.');
+        return;
+    }
+	
+	$('#orderForm').submit();
 }
 </script>
 </body>

@@ -38,8 +38,17 @@
 		select count(*) from kboreview where prdNo=#{prdNo}
 	</select>
 	
+	<update id="updateViews" parameterType="String">
+		update kbogoods set views = views + 1 where prdNo=#{prdNo}
+	</update>
+	
 	<!-- Review -->
 	<select id="getUserName" parameterType="String" resultType="String">
 		select name from kbouser where userId = #{userId}
 	</select>
+	
+	<update id="reviewLike" parameterType="int">
+		update kboreview set likes = likes + 1 where reviewNo=#{reviewNo}
+	</update>
+	
 </mapper>

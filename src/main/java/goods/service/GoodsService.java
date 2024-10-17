@@ -24,4 +24,8 @@ public interface GoodsService {
 
 	public String getUserName(String userId);
 
+	public void updateViews(String prdNo);
+
+	public void reviewLike(int reviewNo);
+
 }

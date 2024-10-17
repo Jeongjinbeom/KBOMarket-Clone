@@ -26,7 +26,10 @@
 			<div id="reviewContent">
 				<div class="reviewTitle">${list.reviewTitle }<span><fmt:formatDate pattern="YYYY.MM.dd" value="${list.regDate }"/></span></div>
 				<div class="reviewContent"><pre>${list.reviewContent }</pre></div>
-				<div class="reviewLike">좋아요 ${list.likes }</div>
+				<div class="reviewLike">
+					<span id="ThumbUp" data-review-no="${list.reviewNo}" class="material-symbols-outlined" onclick="upLike(${list.reviewNo})">thumb_up</span> 
+					<span class="review-${list.reviewNo}" id="${list.likes }" >${list.likes }</span>
+				</div>
 			</div>
 		</div>
 	</c:forEach>

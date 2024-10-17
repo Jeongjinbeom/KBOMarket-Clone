@@ -29,4 +29,8 @@ public interface GoodsDAO {
 
 	public int goodsTotalA(String prdNo);
 
+	public void updateViews(String prdNo);
+
+	public void reviewLike(int reviewNo);
+
 }

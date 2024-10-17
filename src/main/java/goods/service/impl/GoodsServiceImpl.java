@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.Cookie;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -86,6 +88,7 @@ public class GoodsServiceImpl implements GoodsService {
 		return goodsDAO.getGoods(prdNo);
 	}
 
+	//리뷰(list, reviePagin, total)
 	@Override
 	public Map<String, Object> getReviewCount(String prdNo, String pg) {
 		//1페이지 당 5개씩
@@ -114,8 +117,22 @@ public class GoodsServiceImpl implements GoodsService {
 		return map2;
 	}
 
+	//리뷰 작성자 이름
 	@Override
 	public String getUserName(String userId) {
 		return goodsDAO.getUserName(userId);
+	}
+
+	
+	//조회수 증가
+	@Override
+	public void updateViews(String prdNo) {
+		
+		goodsDAO.updateViews(prdNo);
+	}
+
+	@Override
+	public void reviewLike(int reviewNo) {
+		goodsDAO.reviewLike(reviewNo);
 	}
 }

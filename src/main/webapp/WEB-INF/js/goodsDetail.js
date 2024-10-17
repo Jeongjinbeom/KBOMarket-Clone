@@ -14,12 +14,12 @@ function selectSize(selectElement) {
         // orderForm 생성
         orderDiv.innerHTML = `
         	<div class="orderDiv">
-            <form name="orderForm" action="/KBOMarket/goods/order" method="post" id="orderForm">
+            <form name="orderForm" method="post" action="/KBOMarket/order/orderForm" id="orderForm">
             <input type="hidden" name="prdNo" value="` + prdNo + `" />
 	            <table id="orderTable">
 	            	<tr>
 	           			<td><span class="orderSizeTitle">` + prdName + `(` + selectedValue + `)</span>
-	           				<input type="hidden" name="prdSize" id="orderPrdSize" value="` + selectedValue + `" /></td>
+	           				<input type="hidden" name="orderSize" id="orderPrdSize" value="` + selectedValue + `" /></td>
 	        			<td>
 	        				<input type="number" name="qty" id="qty" value="1" readonly onchange="updatePrice()" />
 	        				<input type="hidden" id="onePrice" value="` + prdPrice + `" />
@@ -30,7 +30,7 @@ function selectSize(selectElement) {
 				                <button id="down" type="button" onclick="changeQuantity(-1)">▼</button>
 				            </div>
 	               		<td>
-	               			<input type="hidden" name="prdPrice" id="orderPrice" value="` + prdPrice + `" />
+	               			<input type="hidden" name="orderPrice" id="orderPrice" value="` + prdPrice + `" />
 	               			<span id="displayPrice">` + prdPrice + `</span>
 	               		</td>
 		            </tr>
@@ -75,4 +75,26 @@ function changeQuantity(delta) {
 
     qtyInput.value = currentQty; // 업데이트된 수량을 입력 필드에 설정
     updatePrice(); // 가격 업데이트
+}
+
+
+function upLike(reviewNo){
+	$.ajax({
+		type : 'post',
+		url : '/KBOMarket/goods/reviewLike',
+		data : {'reviewNo' : reviewNo},
+		success : function(){
+            $('.material-symbols-outlined[data-review-no="' + reviewNo + '"]').css('color', 'tomato');
+		
+			console.log(reviewNo);
+		    let likesId = $('.review-' + reviewNo).attr('id');
+            
+		    likesId = parseInt(likesId) + 1;
+		    
+		    $('.review-' + reviewNo).text(likesId);
+		},
+		error : function(e){
+			console.log(e);
+		} 
+	});
 }
