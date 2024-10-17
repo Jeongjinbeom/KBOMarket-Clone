@@ -18,7 +18,7 @@ CREATE TABLE KBOUser (
 DROP TABLE KBOTeam;
 CREATE TABLE KBOTeam (
 	teamId INT PRIMARY KEY,
-	teamAbbr VARCHAR(10) NOT NULL,  -- 팀 약자
+	teamAbbr VARCHAR(50) NOT NULL,  -- 팀 약자
 	teamName VARCHAR(100) NOT NULL UNIQUE    -- 팀 전체 이름
 );
 
@@ -32,7 +32,9 @@ INSERT INTO KBOTeam (teamId, teamAbbr, teamName) VALUES
 (7, 'GIANTS', '롯데 자이언츠'),
 (8, 'LIONS', '삼성 라이온즈'),
 (9, 'EAGLES', '한화 이글스'),
-(10, 'KIWOOM', '키움 히어로즈');
+(10, 'HEROES', '키움 히어로즈')
+ON DUPLICATE KEY UPDATE
+teamAbbr = VALUES(teamAbbr), teamName = VALUES(teamName);
 
 #상품테이블
 DROP TABLE KBOGoods;
@@ -54,27 +56,32 @@ CREATE TABLE KBOGoods (
 
 #후기테이블
 DROP TABLE KBOReview;
-CREATE TABLE KBOReview(
-	reviewNo INT PRIMARY KEY AUTO_INCREMENT, -- 후기번호
-	prdNo INT NOT NULL, -- 상품번호
-	userId VARCHAR(100) NOT NULL, -- 회원아이디
-	reviewTitle VARCHAR(200), -- 후기제목
-	reviewContent TEXT NOT NULL, -- 후기내용
-	likes INT DEFAULT 0, -- 후기 좋아요 수
+CREATE TABLE KBOGoods (
+	prdNo INT PRIMARY KEY AUTO_INCREMENT, -- 상품번호
+	teamId INT NOT NULL, -- 야구구단이름
+	ctg VARCHAR(100) NOT NULL, -- 상품 카테고리
+	prdName VARCHAR(200) NOT NULL, -- 상품명
+	prdPrice DECIMAL(10, 2) NOT NULL CHECK (prdPrice >= 0), -- 상품가격
+	prdSize VARCHAR(50) DEFAULT 'original', -- 상품사이즈
+	qty INT DEFAULT 0, -- 상품개수
+    imageFileName VARCHAR(100) not null,
+	imageOriginalFileName VARCHAR(100) not null,
 	regDate DATETIME DEFAULT CURRENT_TIMESTAMP, -- 등록날짜
+	views INT DEFAULT 0, -- 조회수
 	
-	FOREIGN KEY (prdNo) REFERENCES KBOGoods(prdNo),
-	FOREIGN KEY (userId) REFERENCES KBOUser(userId)
+	FOREIGN KEY (teamId) REFERENCES KBOTeam(teamId)
 );
 
 #장바구니테이블
 DROP TABLE KBOCart;
 CREATE TABLE KBOCart (
 	cartNo INT PRIMARY KEY AUTO_INCREMENT, -- 장바구니번호
-	prdNo INT NOT NULL, -- 상품번호
 	userId VARCHAR(100) NOT NULL, -- 회원아이디
-	qty INT DEFAULT 1 CHECK (qty > 0), -- 개수
-	regDate DATETIME DEFAULT CURRENT_TIMESTAMP, -- 등록날짜
+	prdNo INT NOT NULL, -- 상품번호
+	orderPrice INT NOT NULL, -- 상품가격 (추가)
+	orderSize VARCHAR(50), -- 상품사이즈
+	qty INT NOT NULL CHECK (qty > 0), -- 상품개수
+	regDate DATETIME DEFAULT CURRENT_TIMESTAMP, -- 담은날짜
 	
 	FOREIGN KEY (prdNo) REFERENCES KBOGoods(prdNo),
 	FOREIGN KEY (userId) REFERENCES KBOUser(userId)
@@ -86,8 +93,8 @@ CREATE TABLE KBOOrder (
 	ordNo INT PRIMARY KEY AUTO_INCREMENT, -- 구매번호
 	userId VARCHAR(100) NOT NULL, -- 회원아이디
 	prdNo INT NOT NULL, -- 상품번호
-	prdPrice VARCHAR(50), -- 상품가격
-	prdSize VARCHAR(50), -- 상품사이즈
+	orderPrice INT NOT NULL, -- 상품가격 (추가)
+	orderSize VARCHAR(50), -- 상품사이즈
 	qty INT NOT NULL CHECK (qty > 0), -- 상품개수
 	regDate DATETIME DEFAULT CURRENT_TIMESTAMP, -- 구매날짜
 	

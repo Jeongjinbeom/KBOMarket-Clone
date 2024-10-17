@@ -18,7 +18,7 @@
 <body>
 	<jsp:include page="../header.jsp" />
 	
-	<form id="adminListForm">
+	<form id="adminListForm" action="/KBOMarket/admin/deleteAdminList" method="post">
 		<div id="padding"></div>
 		<div class="content-List">
 			<h2>상품목록</h2>
@@ -95,21 +95,7 @@ function deleteSelectedItems(){
     var confirmDelete = confirm("정말 삭제하시겠습니까?");
     
     if (confirmDelete) {
-	    console.log(check);
-        // "Yes"를 선택했을 때 삭제 진행
-        $.ajax({
-            type: "POST",
-            url: "/KBOMarket/admin/deleteAdminList", 
-            data: $('#adminListForm').serialize(),
-            success: function() {
-            	alert('삭제 완료되었습니다.');
-                location.href="/KBOMarket/admin/adminList";
-            },
-            error: function(xhr, status, error) {
-                console.error("Error: " + error);
-                alert("삭제 중 오류가 발생했습니다.");
-            }
-        });
+        $('#adminListForm').submit();
     } else {
         // "No"를 선택했을 때 아무 동작도 하지 않음
         alert("삭제가 취소되었습니다.");
