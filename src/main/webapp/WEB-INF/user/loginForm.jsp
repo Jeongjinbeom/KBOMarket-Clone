@@ -14,7 +14,7 @@
 	<jsp:include page="../header.jsp" />
 <section>
 	<div class="location_cont">
-	      <em><a href="#" class="local_home">HOME</a> &gt; 로그인</em>
+	      <em><a href="/KBOMarket/" class="local_home">HOME</a> &gt; 로그인</em>
 	</div>
 	<hr>
 </section>
@@ -27,24 +27,26 @@
 	        <form class="signup-form" id="userLoginForm" name="userLoginForm">
 	            <div class="signup-form-group">
 	                <label for="userId" class="signup-label">아이디</label>
-	                <input type="text" id="userId" name="userId" required class="signup-input" style="width: 100%; max-width: 250px;">
+	                <input type="text" id="userId" name="userId" class="signup-input" style="width: 100%; max-width: 250px;">
 	                 <div id="checkidDiv"></div>
 	            </div>
 	            <div class="signup-form-group">
 	                <label for="pwd" class="signup-label">비밀번호</label>
-	                <input type="password" id="pwd" name="pwd" required class="signup-input" style="width: 100%; max-width: 250px;">
+	                <input type="password" id="pwd" name="pwd" class="signup-input" style="width: 100%; max-width: 250px;">
 		            <div id="checkpwdDiv"></div>
 	            </div>
 	            <div class="signup-btn-group">
-	                <button type="button" class="signup-btn signup-btn-secondary" onclick="location.href='/KBOMarket/user/writeForm'">회원가입</button>
-	                <button type="button" class="signup-btn signup-btn-primary" id="loginBtn">로그인</button>
+	                <input type="button" class="signup-btn signup-btn-secondary" onclick="location.href='/KBOMarket/user/writeForm'" value="회원가입"/>
+	                <input type="button" class="signup-btn signup-btn-primary" id="loginBtn" value="로그인"/>
 	            </div>
 	            <div class="signup-btn-group">
+    
 					<a id="kakao-login-btn" href="javascript:loginWithKakao()">
 					  <img src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="222"
 					    alt="카카오 로그인 버튼" />
 					</a>
 					<p id="token-result"></p>
+
 	            </div>
 
 	        </form>	
@@ -70,6 +72,7 @@
 </script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../js/loginForm.js"></script>
+
 <script type="text/javascript" src="../js/kakaoLogin.js"></script>
 <script type="text/javascript">
 

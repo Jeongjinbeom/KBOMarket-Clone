@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KBO마켓 : 회원가입</title>
-<link rel="stylesheet" href="../css/writeForm.css">
+<title>KBO마켓 : 회원정보수정</title>
+<link rel="stylesheet" href="../css/updateForm.css">
 <link rel="stylesheet" href="../css/index.css">
 <link rel="stylesheet" href="../css/header.css">
 </head>
@@ -14,7 +14,7 @@
 	<jsp:include page="../header.jsp" />
 <section>
 	<div class="location_cont">
-	      <em><a href="/KBOMarket/" class="local_home">HOME</a> &gt; 회원가입 &gt; 정보입력</em>
+	      <em><a href="/KBOMarket/" class="local_home">HOME</a> &gt; 마이페이지 &gt; 회원정보수정</em>
 	</div>
 	<hr>
 </section>
@@ -23,16 +23,17 @@
     <div class="sub_content"></div>
     
     <div class="signup-container">
-        <h1>회원가입</h1>
-        <form class="signup-form" id="userWriteForm" name="userWriteForm">
+        <h1>회원정보수정</h1>
+        <form class="signup-form" id="userUpdateForm" name="userUpdateForm">
         	<div class="signup-form-group">
                 <label for="userId" class="signup-label">아이디</label>
-                <input type="text" id="userId" name="userId" class="signup-input" style="width: 100%; max-width: 400px;">
+                <input type="text" id="userId" name="userId" value="${userDTO.userId} " required class="signup-input" style="width: 100%; max-width: 400px;" readonly>
+                
             	<div id="userIdDiv"></div>
             </div>
             <div class="signup-form-group">
                 <label for="pwd" class="signup-label">비밀번호</label>
-                <input type="password" id="pwd" name="pwd" class="signup-input" style="width: 100%; max-width: 350px;">
+                <input type="password" id="pwd" name="pwd" value="${userDTO.pwd}"class="signup-input" style="width: 100%; max-width: 350px;">
             	<div id="pwdDiv"></div>
             </div>
             <div class="signup-form-group">
@@ -42,51 +43,48 @@
             </div>
             <div class="signup-form-group">
                 <label for="name" class="signup-label">이름</label>
-                <input type="text" id="name" name="name" class="signup-input"  style="width: 100%; max-width: 350px;">
+                <input type="text" id="name" name="name" value="${userDTO.name }" class="signup-input"  style="width: 100%; max-width: 350px;">
                 <div id="nameDiv"></div>
             </div>
             
             <div class="signup-form-group">
                 <label for="email" class="signup-label">이메일</label>
-                <input type="text" id="email" name="email" class="signup-input"  style="width: 100%; max-width: 320px;">
-                <input type="button" id="sendVerificationBtn" value="인증번호 발송" class="signup-btn signup-btn-secondary">
+                <input type="text" id="email" name="email" readonly value="${userDTO.email }"required class="signup-input"  style="width: 100%; max-width: 350px;">
+                <!-- <input type="button" id="sendVerificationBtn" value="인증번호 발송" class="signup-btn signup-btn-secondary"> -->
                 <div id="emailDiv"></div>
             </div> 
             
-            <div class="signup-form-group">
+            <!-- <div class="signup-form-group">
                 <label for="verificationCode" class="signup-label">이메일 인증</label>
-                <input type="text" id="verificationCode" class="signup-input" style="width: 100%; max-width: 320px;"> 
+                <input type="text" id="verificationCode" required class="signup-input" style="width: 100%; max-width: 320px;"> 
                 <input type="button" id="verifyCodeBtn" value="인증번호 확인" class="signup-btn signup-btn-secondary" required>
                 <div id="emailcheckDiv"></div>
-            </div>
+            </div> -->
 
   
             <div class="signup-form-group">
                 <label for="tel" class="signup-label">휴대폰번호</label>
-                <input type="text" id="tel" name="tel" class="signup-input" style="width: 100%; max-width: 350px;">
+                <input type="text" id="tel" name="tel" value="${userDTO.tel }" class="signup-input" style="width: 100%; max-width: 350px;">
             </div>
             
             <div class="signup-form-group">
                 <label for="phone" class="signup-label">주소</label>
-                <input type="text" name="zipcode" id="zipcode" size="6" class="signup-input" style="width: 100%; max-width: 250px;"/>
+                <input type="text" name="zipcode" id="zipcode" value="${userDTO.zipcode }" size="6" class="signup-input" style="width: 100%; max-width: 250px;"/>
                 <input type="button" value="우편번호 검색" onclick="checkPost(); return false;" class="signup-btn signup-btn-secondary">
 			</div>
 			<div class="signup-form-group">
-                <input type="text" id="addr1" name="addr1" placeholder="주소"
-              		readonly class="signup-input" style="width: 100%; max-width: 550px;">
+                <input type="text" id="addr1" name="addr1" placeholder="주소" value="${userDTO.addr1 }"
+              		  class="signup-input" style="width: 100%; max-width: 550px;">
             </div>
             <div class="signup-form-group">
-              	<input type="text"id="addr2" name="addr2" placeholder="상세주소" 
-              	 class="signup-input" style="width: 100%; max-width: 550px;">
+              	<input type="text"id="addr2" name="addr2" placeholder="상세주소" value="${userDTO.addr2 }"
+              	class="signup-input" style="width: 100%; max-width: 550px;">
             </div>
             
             <div class="signup-btn-group">
-                <button type="reset" class="signup-btn signup-btn-secondary">취소</button>
-
-                <input type="button" class="signup-btn signup-btn-primary" id="joinBtn" value="회원가입"/>
-
-               <!--  <button class="signup-btn signup-btn-primary" id="joinBtn">회원가입</button> -->
-
+                <input type="reset" class="signup-btn signup-btn-secondary" value="취소"/>
+                <input type="button" class="signup-btn signup-btn-primary" id="updateBtn" value="회원정보수정"/>
+                <input type="button" class="signup-btn signup-btn-third" id="deleteBtn" value="회원탈퇴" onclick="location.href='/KBOMarket/user/deleteForm'"/>
             </div>
         </form>
     </div>
@@ -107,7 +105,7 @@
 	
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> 
-<script type="text/javascript" src="../js/writeForm.js"></script>
+<script type="text/javascript" src="../js/updateForm.js"></script>
 <!-- 우편번호 -->
 <script>
 function checkPost() {
@@ -127,10 +125,6 @@ function checkPost() {
         }
     }).open();
 }
-</script>
-
-<script type="text/javascript">
-
 </script>
 </body>
 </html>

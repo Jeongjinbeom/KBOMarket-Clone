@@ -14,7 +14,7 @@
         			<p>${sessionScope.name}님</p>
         			<a href="/KBOMarket/logout" class="logout">로그아웃</a>
 					<c:if test="${sessionScope.name != '관리자'}">
-				        <a href="#" class="mypage">마이페이지</a>
+				        <a href="/KBOMarket/user/myPage" class="mypage">마이페이지</a>
 				    </c:if>
    			 	</c:if>
     
@@ -25,7 +25,7 @@
 			    <c:if test="${sessionScope.name == '관리자'}">
 				        <a href="/KBOMarket/admin/admin" class="mypage">관리자페이지</a>
 				</c:if>
-   
+
             </div>
             <div class="icons">
                <span class="icon-heart">&#10084;</span> <span class="icon-cart">&#128722;
