@@ -90,7 +90,7 @@ $(function(){
                 url: '/KBOMarket/user/update',
                 data: $('#userUpdateForm').serialize(),
                 success: function() {
-                    alert('수정 완료');
+                    alert('수정 완료! 다시 로그인하세요');
                     location.href = '/KBOMarket/';
                 },
                 error: function(e) {

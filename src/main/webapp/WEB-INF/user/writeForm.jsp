@@ -26,35 +26,35 @@
         <h1>회원가입</h1>
         <form class="signup-form" id="userWriteForm" name="userWriteForm">
         	<div class="signup-form-group">
-                <label for="userId" class="signup-label">아이디</label>
+                <label for="userId" class="signup-label">*아이디</label>
                 <input type="text" id="userId" name="userId" class="signup-input" style="width: 100%; max-width: 400px;">
             	<div id="userIdDiv"></div>
             </div>
             <div class="signup-form-group">
-                <label for="pwd" class="signup-label">비밀번호</label>
+                <label for="pwd" class="signup-label">*비밀번호</label>
                 <input type="password" id="pwd" name="pwd" class="signup-input" style="width: 100%; max-width: 350px;">
             	<div id="pwdDiv"></div>
             </div>
             <div class="signup-form-group">
-                <label for="repwd" class="signup-label">비밀번호확인</label>
+                <label for="repwd" class="signup-label">*비밀번호확인</label>
                 <input type="password" id="repwd" class="signup-input" style="width: 100%; max-width: 350px;">
            		<div id="repwdDiv"></div>
             </div>
             <div class="signup-form-group">
-                <label for="name" class="signup-label">이름</label>
+                <label for="name" class="signup-label">*이름</label>
                 <input type="text" id="name" name="name" class="signup-input"  style="width: 100%; max-width: 350px;">
                 <div id="nameDiv"></div>
             </div>
             
             <div class="signup-form-group">
-                <label for="email" class="signup-label">이메일</label>
+                <label for="email" class="signup-label">*이메일</label>
                 <input type="text" id="email" name="email" class="signup-input"  style="width: 100%; max-width: 320px;">
                 <input type="button" id="sendVerificationBtn" value="인증번호 발송" class="signup-btn signup-btn-secondary">
                 <div id="emailDiv"></div>
             </div> 
             
             <div class="signup-form-group">
-                <label for="verificationCode" class="signup-label">이메일 인증</label>
+                <label for="verificationCode" class="signup-label">*이메일 인증</label>
                 <input type="text" id="verificationCode" class="signup-input" style="width: 100%; max-width: 320px;"> 
                 <input type="button" id="verifyCodeBtn" value="인증번호 확인" class="signup-btn signup-btn-secondary" required>
                 <div id="emailcheckDiv"></div>

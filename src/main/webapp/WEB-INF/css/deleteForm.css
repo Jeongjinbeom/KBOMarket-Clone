@@ -1,6 +1,4 @@
-/* em{
-	margin-left:-20px;
-} */
+
 a{text-decoration-line: none;}
 a:link { color:#777777; }
 a:hover { color:blue; }
@@ -21,6 +19,7 @@ a:hover { color:blue; }
     color: #777777;
     font-size: 11px;
  }
+ 
 .signup-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -45,7 +44,7 @@ a:hover { color:blue; }
   gap: 15px; */
   //display: flex;
   flex-direction: column;
-  width: 100%;
+  /* width: 100%; */
   max-width: 300px;
 }
 
@@ -105,4 +104,39 @@ a:hover { color:blue; }
   width: 300px;
   background-color: #f0f0f0;
   color: #333;
+}
+
+/*반응형*/
+@media (max-width: 600px) {
+    .signup-container {
+        padding: 10px;
+    }
+    .signup-form {
+        max-width: 100%;
+    }
+    .signup-form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .signup-label {
+        width: auto;
+        padding-right: 0;
+        margin-bottom: 5px;
+    }
+    .signup-btn {
+        width: 100%;
+    }
+    .signup-btn-primary,
+    .signup-btn-secondary {
+        width: 100%;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .signup-form {
+        max-width: 400px;
+    }
+    .signup-btn {
+        width: 45%;
+    }
 }

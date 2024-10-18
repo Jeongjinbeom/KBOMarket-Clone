@@ -14,7 +14,7 @@
         			<p>${sessionScope.name}님</p>
         			<a href="/KBOMarket/logout" class="logout">로그아웃</a>
 					<c:if test="${sessionScope.name != '관리자'}">
-				        <a href="/KBOMarket/user/myPage" class="mypage">마이페이지</a>
+				        <a href="/KBOMarket/order/cartForm" class="mypage">마이페이지</a>
 				    </c:if>
    			 	</c:if>
     
