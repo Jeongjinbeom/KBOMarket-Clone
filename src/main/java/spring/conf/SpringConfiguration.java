@@ -22,6 +22,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @PropertySource("classpath:spring/db.properties")
 @MapperScan("user.dao")
 @MapperScan("goods.dao")
+@MapperScan("kakao.dao")
 public class SpringConfiguration {
 	
 	private @Value("${jdbc.driver}") String driver;
