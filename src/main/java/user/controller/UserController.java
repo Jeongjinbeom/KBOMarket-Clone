@@ -6,8 +6,10 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
@@ -19,7 +21,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import user.bean.UserDTO;
+
 import user.service.MailService;
+
 import user.service.UserService;
 
 @Controller
@@ -147,6 +151,7 @@ public class UserController {
 	public String updateForm(HttpSession session, Model model) {
 		String userId = (String) session.getAttribute("userId");
 		UserDTO userDTO  = userService.updateuserId(userId);
+		//추가
 		
 		model.addAttribute("userDTO", userDTO);
 	return "/user/updateForm";
@@ -197,8 +202,7 @@ public class UserController {
 	@RequestMapping(value="logout", method = RequestMethod.POST)
 	@ResponseBody
 	public String logout(HttpSession session) {
-		session.invalidate();
-		
+		session.invalidate();		
 		return "redirect:/";
 	}
 

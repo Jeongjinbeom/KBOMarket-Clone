@@ -155,3 +155,50 @@ a:hover { color:blue; }
   background-color: #f0f0f0;
   color: #333;
 }
+
+/* 미디어 쿼리 추가 */
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 15px; /* 패딩 줄이기 */
+    }
+
+    .signup-label {
+        width: auto; /* 라벨 너비 자동 조정 */
+        padding-right: 10px; /* 패딩 줄이기 */
+    }
+
+    .signup-form-group {
+        flex-direction: column; /* 세로 방향으로 나열 */
+        align-items: flex-start; /* 왼쪽 정렬 */
+    }
+
+    .signup-input {
+        width: 100%; /* 입력 필드 너비를 가득 채움 */
+    }
+
+    .signup-btn-group {
+        flex-direction: column; /* 버튼을 세로로 나열 */
+        align-items: center; /* 중앙 정렬 */
+    }
+
+    .signup-btn {
+        width: 100%; /* 버튼을 가득 차게 설정 */
+        margin: 5px 0; /* 버튼 간격 조정 */
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-container h1 {
+        font-size: 20px; /* 제목 크기 줄이기 */
+    }
+
+    .signup-btn-primary,
+    .signup-btn-secondary,
+    .signup-btn-third {
+        width: 100%; /* 버튼을 가득 차게 설정 */
+    }
+
+    .signup-input {
+        padding: 6px; /* 입력 필드 패딩 줄이기 */
+    }
+}
