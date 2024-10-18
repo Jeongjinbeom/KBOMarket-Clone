@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+
+import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -80,7 +82,7 @@ public class UserController {
 				session.setAttribute("pwd", userDTO.getPwd());
 				session.setAttribute("name", userDTO.getName());
 				
-				session.setAttribute("userDTO", userDTO);
+				/* session.setAttribute("userDTO", userDTO); */
 
 	            System.out.println("userId: " + session.getAttribute("userId"));
 	            System.out.println("name: " + session.getAttribute("name"));
@@ -92,6 +94,69 @@ public class UserController {
 
 	    }
 	
+	//마이페이지
+	@RequestMapping(value="myPage", method = RequestMethod.GET)
+	public String myPage() {
+		return "/user/myPage";
+	}
+	
+	//수정페이지
+	@RequestMapping(value="updateForm", method = RequestMethod.GET)
+	public String updateForm(HttpSession session, Model model) {
+		String userId = (String) session.getAttribute("userId");
+		UserDTO userDTO  = userService.updateuserId(userId);
+		
+		model.addAttribute("userDTO", userDTO);
+	return "/user/updateForm";
+	}
+	
+	//수정
+	@RequestMapping(value="update", method = RequestMethod.POST)
+	@ResponseBody
+	public void update(@ModelAttribute UserDTO userDTO) {
+		System.out.println("UserDTO.... : " + userDTO);
+		userService.update(userDTO);
+	}
+	
+	//탈퇴 - 폼
+	@RequestMapping(value="deleteForm", method = RequestMethod.GET)
+	public String deleteForm(HttpSession session, Model model) {
+		
+		String id = (String) session.getAttribute("userId");
+		String pwd = (String) session.getAttribute("pwd");
+		//UserDTO userDTO  = userService.deleteuserPwd(userId, pwd);
+		
+		//model.addAttribute("userDTO", userDTO);
+		return "/user/deleteForm";
+	}
+	
+	//탈퇴 - 비밀번호 확인
+	@RequestMapping(value="getExistPwd", method = RequestMethod.POST)
+	@ResponseBody
+	public UserDTO getExistPwd(@RequestParam String pwd, HttpSession session, Model model) {
+		String id = (String) session.getAttribute("userId");
+		
+		System.out.println(userService.getExistPwd(id, pwd));
+		return userService.getExistPwd(id, pwd);
+	}
+		
+	//탈퇴 버튼
+	@RequestMapping(value="delete", method = RequestMethod.POST)
+	@ResponseBody
+	public void delete(@RequestParam String pwd, HttpSession session) {
+		String id = (String) session.getAttribute("userId");
+		userService.delete(id);
+	}
+	
+	//탈퇴 후 로그아웃
+	@RequestMapping(value="logout", method = RequestMethod.POST)
+	@ResponseBody
+	public String logout(HttpSession session) {
+		session.invalidate();
+		
+		return "redirect:/";
+	}
+
 	// 이메일
 
 	
@@ -162,5 +227,6 @@ public class UserController {
     	return "index"; // 필요에 따라 반환
 
     }
+
 
 }

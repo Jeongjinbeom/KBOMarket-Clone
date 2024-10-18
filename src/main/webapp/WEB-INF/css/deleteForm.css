@@ -40,36 +40,20 @@ a:hover { color:blue; }
   margin-bottom: 20px;
 }
 
-.signup-step {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 20px;
-}
-
-.signup-step span {
-  margin-left: 10px;
-  color: #888;
-}
-
-.signup-step span.active {
-  color: #333;
-  font-weight: bold;
-}
-
 .signup-form {
   /* display: grid;
   gap: 15px; */
-  display: flex;
+  //display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 500px;
+  max-width: 300px;
 }
 
 .signup-form-group {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   margin-bottom: 10px;
-
+   width: 300px;
 }
 
 .signup-label {
@@ -99,6 +83,7 @@ a:hover { color:blue; }
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  
 }
 
 .signup-btn {
@@ -111,18 +96,12 @@ a:hover { color:blue; }
 }
 
 .signup-btn-primary {
-  width: 150px;
+  width: 300px;
   background-color: #d9a648;
   color: #fff;
 }
 
 .signup-btn-secondary {
-  width: 150px;
-  background-color: #f0f0f0;
-  color: #333;
-}
-
-.signup-btn-third {
   width: 300px;
   background-color: #f0f0f0;
   color: #333;
