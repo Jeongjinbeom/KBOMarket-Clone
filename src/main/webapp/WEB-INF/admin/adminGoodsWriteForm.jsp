@@ -11,13 +11,13 @@
 <link rel="stylesheet" href="../css/adminGoodsWriteForm.css">
 </head>
 <body>
-    <jsp:include page="../header.jsp" />
+    <jsp:include page="./adminHeader.jsp" />
 <hr>
     <div class="container">
         <!-- 왼쪽 이미지 및 중요한 정보 -->
         <div class="left-section">
             <img id="productImage">
-            <div class="upload-text">이미지 등록</div>
+            <div class="upload-text" id="uploadText">이미지 등록</div>
             <div class="product-info">
                 <h2><span id="prdNameDisplay"></span></h2>
             </div>

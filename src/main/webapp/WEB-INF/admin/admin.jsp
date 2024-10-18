@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
-	<jsp:include page="../header.jsp" />
+	<jsp:include page="./adminHeader.jsp" />
 
 	<section class="admin-section">
 		<h2>관리자님이 사용할 기능을 선택해주세요</h2>

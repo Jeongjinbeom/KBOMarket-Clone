@@ -10,4 +10,6 @@ public interface ObjectStorageService {
 
 	public void deleteImageFile(String bucketName, String directoryPath, List<String> list);
 
+	public void adminDeleteImageFile(String bucketName, String directoryPath, String imageFileName);
+
 }

@@ -81,4 +81,28 @@
 		</foreach>
 	</delete>
 	
+	<!-- 조회순으로 출력 -->
+	<select id="getIndexList" resultType="goodsDTO">
+		select * from KBOGoods order by views desc LIMIT 10
+	</select>
+	
+	<!-- 수정할 항목 친구들 가져가기 -->
+	<select id="getAdminUpdateList" parameterType="String" resultType="goodsDTO">
+		select * from KBOGoods where prdNo = #{prdNo}
+	</select>
+	
+	<!-- 상품 수정 -->
+	<update id="adminUpdate" parameterType="goodsDTO">
+		update KBOGoods set teamId = #{teamId},
+							ctg = #{ctg},
+							prdName = #{prdName},
+							prdPrice = #{prdPrice},
+							prdSize = #{prdSize},
+							qty = #{qty},
+							imageFileName = #{imageFileName},
+							imageOriginalFileName = #{imageOriginalFileName}
+		where prdNo = #{prdNo}
+							
+	</update>
+	
 </mapper>
