@@ -40,7 +40,11 @@
 	                <button type="button" class="signup-btn signup-btn-primary" id="loginBtn">로그인</button>
 	            </div>
 	            <div class="signup-btn-group">
-	                <button type="button" class="signup-btn signup-btn-secondary">   카카오로그인   </button>
+					<a id="kakao-login-btn" href="javascript:loginWithKakao()">
+					  <img src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="222"
+					    alt="카카오 로그인 버튼" />
+					</a>
+					<p id="token-result"></p>
 	            </div>
 
 	        </form>	
@@ -59,10 +63,17 @@
 			reserved.<br>
 		</span>
 	</footer>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"
+  integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
+<script>
+  Kakao.init('319352d2da2702df6d942999d2ec691d'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../js/loginForm.js"></script>
+<script type="text/javascript" src="../js/kakaoLogin.js"></script>
 <script type="text/javascript">
 
 </script>
+
 </body>
 </html>

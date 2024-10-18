@@ -39,6 +39,16 @@ public class UserServiceImpl implements UserService {
 		return userDAO.login(map);
 	}
 
+	@Override
+	public void saveUser(UserDTO user) {
+		userDAO.saveUser(user);
+	}
+
+	@Override
+	public UserDTO findUser(UserDTO user) {
+		return userDAO.findUser(user);
+	}
+
 
 	//이메일 인증
 	
