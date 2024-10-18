@@ -6,16 +6,20 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import user.bean.UserDTO;
+import user.service.MailService;
 import user.service.UserService;
 
 @Controller
@@ -23,6 +27,9 @@ import user.service.UserService;
 public class UserController {
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+    private MailService mailService;
 
 	//회원가입-폼
 	@RequestMapping(value="writeForm", method = RequestMethod.GET)
@@ -38,13 +45,60 @@ public class UserController {
 		return userService.getExistId(userId);
 	}
 	
-	//회원가입버튼
-	@RequestMapping(value="join", method = RequestMethod.POST)
+	 // 이메일 인증 코드 전송
+	@PostMapping("/mailCheck")
 	@ResponseBody
-	public void join(@ModelAttribute UserDTO userDTO) {
-		System.out.println("UserDTO : " + userDTO);
-		userService.join(userDTO);
+	public ResponseEntity<String> mailCheck(@RequestParam("email") String email, HttpSession session) {
+	    try {
+	        String authCode = mailService.joinEmail(email);
+	        session.setAttribute("authCode", authCode);
+	        session.setAttribute("authEmail", email);
+	        return ResponseEntity.ok("인증번호가 발송되었습니다.");
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("인증번호 발송 실패: " + e.getMessage());
+	    }
 	}
+
+	@PostMapping("/verifyEmail")
+	@ResponseBody
+	public ResponseEntity<String> verifyEmail(@RequestParam("code") String code, HttpSession session) {
+	    String authCode = (String) session.getAttribute("authCode");
+	    String authEmail = (String) session.getAttribute("authEmail");
+	    
+	    if (authCode != null && authCode.equals(code)) {
+	        session.setAttribute("emailVerified", true);
+	        return ResponseEntity.ok("인증 성공");
+	    } else {
+	        return ResponseEntity.badRequest().body("인증 실패");
+	    }
+	}
+
+	@PostMapping("/join")
+	@ResponseBody
+	public ResponseEntity<String> join(@ModelAttribute UserDTO userDTO, HttpSession session) {
+	    Boolean emailVerified = (Boolean) session.getAttribute("emailVerified");
+	    String authEmail = (String) session.getAttribute("authEmail");
+	    
+	    if (emailVerified == null || !emailVerified || !userDTO.getEmail().equals(authEmail)) {
+	        return ResponseEntity.badRequest().body("이메일 인증이 필요합니다.");
+	    }
+	    
+	    userService.join(userDTO);
+	    session.removeAttribute("emailVerified");
+	    session.removeAttribute("authCode");
+	    session.removeAttribute("authEmail");
+	    return ResponseEntity.ok("success");
+	}
+	
+	/*
+	 * //회원가입버튼
+	 * 
+	 * @RequestMapping(value="join", method = RequestMethod.POST)
+	 * 
+	 * @ResponseBody public void join(@ModelAttribute UserDTO userDTO) {
+	 * System.out.println("UserDTO : " + userDTO); userService.join(userDTO); }
+	 */
 		
 	//로그인-폼
 	@RequestMapping(value="loginForm", method = RequestMethod.GET)

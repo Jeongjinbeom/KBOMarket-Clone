@@ -50,8 +50,9 @@ public class UserServiceImpl implements UserService {
 	//
 	@Override
 	public void update(UserDTO userDTO) {
-		System.out.println("userDTO.impl" + userDTO);
-		userDAO.update(userDTO);
+		System.out.println("userDTO.impl " + userDTO);
+		int su = userDAO.update(userDTO);
+		System.out.println("su 값 : " + su);
 	}
 	
 	//

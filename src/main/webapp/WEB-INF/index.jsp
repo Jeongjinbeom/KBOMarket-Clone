@@ -17,7 +17,7 @@
     <!-- 본문 -->
     <section class="imageSlider">
         <div class="slider">
-            <a href="/KBOMarket/goods/goodsList?teamId=1"><img src="https://cdn-pro-web-250-211.cdn-nhncommerce.com/keienkorea5_godomall_com/data/skin/front/awesome/img/banner/slider_511517418/66adc3680806de94460a52a7c8cf6e7e_82224.jpg" alt="첫 번째 슬라이드" id="slide1"></a>
+            <a href="/KBOMarket/goods/goodsList?teamId=1"><img src="https://cdn-pro-web-250-211.cdn-nhncommerce.com/keienkorea5_godomall_com/data/editor/promotion/241017/36b107e510638e04ab851318c1367623_190803.jpg" alt="첫 번째 슬라이드" id="slide1"></a>
             <a href="/KBOMarket/goods/goodsList?teamId=1"><img src="https://cdn-pro-web-250-211.cdn-nhncommerce.com/keienkorea5_godomall_com/data/skin/front/awesome/img/banner/slider_511517418/56ac6e04092e2a3a456881ae42554a2a_38633.jpg" alt="두 번째 슬라이드" id="slide2"></a>
             <a href="/KBOMarket/goods/goodsList?teamId=1"><img src="https://cdn-pro-web-250-211.cdn-nhncommerce.com/keienkorea5_godomall_com/data/skin/front/awesome/img/banner/slider_511517418/2fcfbcd7db1612eccc7ec55e0655fa75_75161.jpg" alt="세 번째 슬라이드" id="slide3"></a>
         </div>

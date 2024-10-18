@@ -19,7 +19,7 @@
 			<div class="menu-item">
 				<h2>회원 관리</h2>
 				<p>가입된 회원 목록을 확인하고 관리합니다.</p>
-				<a href="#" class="btn">회원 목록 보기</a>
+				<a href="./adminUserList" class="btn">회원 목록 보기</a>
 			</div>
 
 			<div class="menu-item">
