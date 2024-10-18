@@ -26,8 +26,7 @@
 	<update id="update" parameterType="userDTO">
 		update KBOUser set name = #{name}, pwd = #{pwd},
 		email = #{email}, tel = #{tel}, zipcode=#{zipcode},
-		addr1 = #{addr1}, addr2 = #{addr2}
-		where userId = #{userId};	
+		addr1 = #{addr1}, addr2 = #{addr2} where userId = #{userId}	
 	</update>
 	
 	<!-- 수정한 정보 db에서 가져오기-->
@@ -64,5 +63,13 @@
 			#{email}, #{tel}, #{zipcode}, #{addr1}, #{addr2})
 	</insert>
 	
+	
+	
+	
+	<!-- 회원가입 목록 -->
+	
+	<select id="getAdminUserList">
+		select * from KBOUser order by regDate desc
+	</select>
 
  </mapper>

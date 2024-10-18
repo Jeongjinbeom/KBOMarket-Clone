@@ -24,21 +24,30 @@ footer {
 }
 
 /* 여기는 이미지 슬라이드 부분 */
+.imageSlider{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
 .slider {
 	position: relative;
 	width: 100%;
+	max-width: 1200px;
+	aspect-ratio: 16/9; /* 16:9 비율 유지 */
 	height: 500px;
 	overflow: hidden;
 }
 
+/* 슬라이더 내부 이미지 크기 동일하게 조정 */
 .slider img {
 	position: absolute;
 	width: 100%;
-	height: 100%;
-	object-fit: cover;
+	height: 500px; /* 첫 번째 이미지에 맞춘 고정 높이 */
+	object-fit: cover; /* 크기에 맞춰 잘리지 않게 조정 */
 	opacity: 0;
 	animation: slide 15s infinite;
 }
+
 
 #slide1 {
 	animation-delay: 0s;
@@ -166,10 +175,17 @@ footer {
 /* 반응형 */
 @media ( max-width : 768px) {
 	/* 이미지 슬라이더 */
-	.slider {
-		height: 300px;
+	.imageSlider {
+		max-height: 220px;
 	}
-
+	
+	.slider img {
+		padding-bottom: 5%; /* 4:3 비율로 조정 */
+		object-fit: contain; /* 크기에 맞춰 잘리지 않게 조정 */
+		max-height: 220px;
+	
+	}
+	
 	/* 상품 목록 */
 	.product-grid {
 		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));

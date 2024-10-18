@@ -27,7 +27,7 @@
         <form class="signup-form" id="userUpdateForm" name="userUpdateForm">
         	<div class="signup-form-group">
                 <label for="userId" class="signup-label">아이디</label>
-                <input type="text" id="userId" name="userId" value="${userDTO.userId} " required class="signup-input" style="width: 100%; max-width: 400px;" readonly>
+                <input type="text" id="userId" name="userId" value="${userDTO.userId}" required class="signup-input" style="width: 100%; max-width: 400px;" readonly>
                 
             	<div id="userIdDiv"></div>
             </div>

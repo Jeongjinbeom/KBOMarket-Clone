@@ -15,12 +15,17 @@ import admin.service.AdminService;
 import admin.service.ObjectStorageService;
 import goods.bean.GoodsDTO;
 import goods.dao.GoodsDAO;
+import user.bean.UserDTO;
+import user.dao.UserDAO;
 
 @Service
 public class AdminServiceImpl implements AdminService{
 
 	@Autowired
 	private GoodsDAO goodsDAO;
+	
+	@Autowired
+	private UserDAO userDAO;
 	
 	// 네이버 클라우드
 	@Autowired
@@ -46,6 +51,15 @@ public class AdminServiceImpl implements AdminService{
 		return goodsDAO.getAdminList();
 	}
 
+	
+	// 회원가입된 유저 목록 가져가기
+	@Override
+	public List<UserDTO> getAdminUserList() {
+		
+		return userDAO.getAdminUserList();
+	}
+	
+	
 	@Override
 	public void deleteAdminList(String[] check) {
 		
@@ -123,5 +137,7 @@ public class AdminServiceImpl implements AdminService{
 		goodsDAO.adminUpdate(goodsDTO);
 		
 	}
+
+	
 
 }

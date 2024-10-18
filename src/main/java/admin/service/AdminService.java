@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 
 import goods.bean.GoodsDTO;
+import user.bean.UserDTO;
 
 public interface AdminService {
 
@@ -19,5 +20,8 @@ public interface AdminService {
 	public GoodsDTO getAdminUpdateList(String prdNo);
 
 	public void adminUpdate(GoodsDTO goodsDTO, MultipartFile imageFile);
+
+	public List<UserDTO> getAdminUserList();
+	
 
 }
