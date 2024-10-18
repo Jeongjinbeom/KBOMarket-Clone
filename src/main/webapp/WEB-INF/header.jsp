@@ -28,8 +28,8 @@
 
             </div>
             <div class="icons">
-               <span class="icon-heart">&#10084;</span> <span class="icon-cart">&#128722;
-               </span>
+               <span class="icon-heart" onclick="location.href='/KBOMarket/order/cartForm'" style="cursor: pointer;">&#10084;</span> 
+               <span class="icon-cart" onclick="location.href='/KBOMarket/order/cartForm'" style="cursor: pointer;">&#128722;</span>
             </div>
          </div>
       </div>

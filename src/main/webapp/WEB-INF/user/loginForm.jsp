@@ -19,7 +19,7 @@
 	<hr>
 </section>
 <section>
-    <div>
+    <div id="loginFormDiv">
     <!-- 실선 아래 간격 조절  -->
     	<div class="sub_content"></div>
     	<div style="margin-bottom: 50px;"></div>
@@ -95,9 +95,7 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="../js/loginForm.js"></script>
-<script type="text/javascript">
 
-</script>
 
 </body>
 </html>

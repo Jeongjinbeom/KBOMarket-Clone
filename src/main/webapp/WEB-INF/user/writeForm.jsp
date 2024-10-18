@@ -46,8 +46,9 @@
                 <div id="nameDiv"></div>
             </div>
             
-            <div class="signup-form-group">
-                <label for="email" class="signup-label">*이메일</label>
+            <!-- <div class="signup-form-group">
+                <label for="email" class="signup-label">이메일</label>
+>>>>>>> 74f12b814450534bf6a441a8109bba845dc4b55e
                 <input type="text" id="email" name="email" class="signup-input"  style="width: 100%; max-width: 320px;">
                 <input type="button" id="sendVerificationBtn" value="인증번호 발송" class="signup-btn signup-btn-secondary">
                 <div id="emailDiv"></div>
@@ -58,7 +59,21 @@
                 <input type="text" id="verificationCode" class="signup-input" style="width: 100%; max-width: 320px;"> 
                 <input type="button" id="verifyCodeBtn" value="인증번호 확인" class="signup-btn signup-btn-secondary" required>
                 <div id="emailcheckDiv"></div>
-            </div>
+            </div> -->
+            
+            <div class="signup-form-group">
+                    <label for="email" class="signup-label">이메일</label>
+                    <input type="text" id="email" name="email" class="signup-input" style="width: 100%; max-width: 320px;">
+                    <input type="button" id="mail-Check-Btn" value="인증번호 발송" class="signup-btn signup-btn-secondary">
+                </div> 
+                
+                <div class="signup-form-group">
+                    <label for="mail-check-input" class="signup-label">이메일 인증</label>
+                    <input type="text" id="mail-check-input" class="signup-input" style="width: 100%; max-width: 320px;" disabled> 
+                    <span id="mail-check-warn"></span>
+                </div>
+                
+                
 
   
             <div class="signup-form-group">
@@ -83,9 +98,9 @@
             <div class="signup-btn-group">
                 <button type="reset" class="signup-btn signup-btn-secondary">취소</button>
 
-                <input type="button" class="signup-btn signup-btn-primary" id="joinBtn" value="회원가입"/>
+                 <input type="button" class="signup-btn signup-btn-primary" id="joinBtn" value="회원가입"/>
+<!--                  <button class="signup-btn signup-btn-primary" id="joinBtn">회원가입</button> -->
 
-               <!--  <button class="signup-btn signup-btn-primary" id="joinBtn">회원가입</button> -->
 
             </div>
         </form>

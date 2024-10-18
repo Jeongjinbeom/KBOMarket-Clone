@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import admin.service.AdminService;
 import admin.service.ObjectStorageService;
 import goods.bean.GoodsDTO;
+import user.bean.UserDTO;
 
 
 @Controller
@@ -50,6 +51,19 @@ public class AdminController {
 
 	}
 	
+	@RequestMapping(value="admin/adminUserList")
+	public ModelAndView adminUserList() {
+		
+		List<UserDTO> list = adminService.getAdminUserList();
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("list", list);
+		mav.setViewName("admin/adminUserList");
+		
+		return mav;
+		
+		
+	}
 	@RequestMapping(value="admin/adminList")
 	public ModelAndView adminList() {
 		List<GoodsDTO> list = adminService.getAdminList();
