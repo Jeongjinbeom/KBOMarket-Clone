@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KBO마켓</title>
 <link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/header.css">
 </head>
 <body>
     <jsp:include page="header.jsp" />
@@ -14,9 +17,9 @@
     <!-- 본문 -->
     <section class="imageSlider">
         <div class="slider">
-            <a href="#"><img src="https://cdn-pro-web-250-211.cdn-nhncommerce.com/keienkorea5_godomall_com/data/skin/front/awesome/img/banner/slider_511517418/66adc3680806de94460a52a7c8cf6e7e_82224.jpg" alt="첫 번째 슬라이드" id="slide1"></a>
-            <a href="#"><img src="https://cdn-pro-web-250-211.cdn-nhncommerce.com/keienkorea5_godomall_com/data/skin/front/awesome/img/banner/slider_511517418/56ac6e04092e2a3a456881ae42554a2a_38633.jpg" alt="두 번째 슬라이드" id="slide2"></a>
-            <a href="#"><img src="https://cdn-pro-web-250-211.cdn-nhncommerce.com/keienkorea5_godomall_com/data/skin/front/awesome/img/banner/slider_511517418/2fcfbcd7db1612eccc7ec55e0655fa75_75161.jpg" alt="세 번째 슬라이드" id="slide3"></a>
+            <a href="/KBOMarket/goods/goodsList?teamId=1"><img src="https://cdn-pro-web-250-211.cdn-nhncommerce.com/keienkorea5_godomall_com/data/editor/promotion/241017/36b107e510638e04ab851318c1367623_190803.jpg" alt="첫 번째 슬라이드" id="slide1"></a>
+            <a href="/KBOMarket/goods/goodsList?teamId=1"><img src="https://cdn-pro-web-250-211.cdn-nhncommerce.com/keienkorea5_godomall_com/data/skin/front/awesome/img/banner/slider_511517418/56ac6e04092e2a3a456881ae42554a2a_38633.jpg" alt="두 번째 슬라이드" id="slide2"></a>
+            <a href="/KBOMarket/goods/goodsList?teamId=1"><img src="https://cdn-pro-web-250-211.cdn-nhncommerce.com/keienkorea5_godomall_com/data/skin/front/awesome/img/banner/slider_511517418/2fcfbcd7db1612eccc7ec55e0655fa75_75161.jpg" alt="세 번째 슬라이드" id="slide3"></a>
         </div>
     </section>
     
@@ -24,61 +27,17 @@
        <h2 class="weekly-best">- WEEKLY BEST -</h2>
        <div class="product-grid">
        <!-- 여기가 이제 등록한 상품 추가하는 이미지가 될것같습니다~ -->
-           <div class="product-item">
-            <img src="https://godomall.speedycdn.net/dae2910e7ca594e113d68e33c79d0e87/goods/1000004220/image/main/1000004220_main_051.png" width="220" alt="[KBO] 2024 포스트시즌 공인구" title="[KBO] 2024 포스트시즌 공인구" class="middle">
-               <h3>[KBO] 2024 포스트시즌 공인구</h3>
-               <p class="price">17,000원</p>
-           </div>
-           <div class="product-item">
-            <img src="https://godomall.speedycdn.net/dae2910e7ca594e113d68e33c79d0e87/goods/1000004220/image/main/1000004220_main_051.png" width="220" alt="[KBO] 2024 포스트시즌 공인구" title="[KBO] 2024 포스트시즌 공인구" class="middle">
-               <h3>[KBO] 2024 포스트시즌 공인구</h3>
-               <p class="price">17,000원</p>
-           </div>
-             <div class="product-item">
-            <img src="https://godomall.speedycdn.net/dae2910e7ca594e113d68e33c79d0e87/goods/1000004220/image/main/1000004220_main_051.png" width="220" alt="[KBO] 2024 포스트시즌 공인구" title="[KBO] 2024 포스트시즌 공인구" class="middle">
-               <h3>[KBO] 2024 포스트시즌 공인구</h3>
-               <p class="price">17,000원</p>
-           </div>
-           <div class="product-item">
-            <img src="https://godomall.speedycdn.net/dae2910e7ca594e113d68e33c79d0e87/goods/1000004220/image/main/1000004220_main_051.png" width="220" alt="[KBO] 2024 포스트시즌 공인구" title="[KBO] 2024 포스트시즌 공인구" class="middle">
-               <h3>[KBO] 2024 포스트시즌 공인구</h3>
-               <p class="price">17,000원</p>
-           </div>
-           <div class="product-item">
-            <img src="https://godomall.speedycdn.net/dae2910e7ca594e113d68e33c79d0e87/goods/1000004220/image/main/1000004220_main_051.png" width="220" alt="[KBO] 2024 포스트시즌 공인구" title="[KBO] 2024 포스트시즌 공인구" class="middle">
-               <h3>[KBO] 2024 포스트시즌 공인구</h3>
-               <p class="price">17,000원</p>
-           </div>
-           <div class="product-item">
-            <img src="https://godomall.speedycdn.net/dae2910e7ca594e113d68e33c79d0e87/goods/1000004220/image/main/1000004220_main_051.png" width="220" alt="[KBO] 2024 포스트시즌 공인구" title="[KBO] 2024 포스트시즌 공인구" class="middle">
-               <h3>[KBO] 2024 포스트시즌 공인구</h3>
-               <p class="price">17,000원</p>
-           </div>
-           <div class="product-item">
-            <img src="https://godomall.speedycdn.net/dae2910e7ca594e113d68e33c79d0e87/goods/1000004220/image/main/1000004220_main_051.png" width="220" alt="[KBO] 2024 포스트시즌 공인구" title="[KBO] 2024 포스트시즌 공인구" class="middle">
-               <h3>[KBO] 2024 포스트시즌 공인구</h3>
-               <p class="price">17,000원</p>
-           </div>
-           <div class="product-item">
-            <img src="https://godomall.speedycdn.net/dae2910e7ca594e113d68e33c79d0e87/goods/1000004220/image/main/1000004220_main_051.png" width="220" alt="[KBO] 2024 포스트시즌 공인구" title="[KBO] 2024 포스트시즌 공인구" class="middle">
-               <h3>[KBO] 2024 포스트시즌 공인구</h3>
-               <p class="price">17,000원</p>
-           </div>
-            <div class="product-item">
-            <img src="https://godomall.speedycdn.net/dae2910e7ca594e113d68e33c79d0e87/goods/1000004220/image/main/1000004220_main_051.png" width="220" alt="[KBO] 2024 포스트시즌 공인구" title="[KBO] 2024 포스트시즌 공인구" class="middle">
-               <h3>[KBO] 2024 포스트시즌 공인구</h3>
-               <p class="price">17,000원</p>
-           </div>
-            <div class="product-item">
-            <img src="https://godomall.speedycdn.net/dae2910e7ca594e113d68e33c79d0e87/goods/1000004220/image/main/1000004220_main_051.png" width="220" alt="[KBO] 2024 포스트시즌 공인구" title="[KBO] 2024 포스트시즌 공인구" class="middle">
-               <h3>[KBO] 2024 포스트시즌 공인구</h3>
-               <p class="price">17,000원</p>
-           </div>
-           
+            <c:forEach items="${list }" var="item">
+		    <div class="product-item" onclick="location.href='/KBOMarket/goods/goodsDetail?prdNo=${item.prdNo}'">
+		        <img src="https://kr.object.ncloudstorage.com/bitcamp-9th-bucket-138/storage/${item.imageFileName}" width="220" alt="${item.prdName}" title="${item.prdName}" class="middle">
+		        <h3>${item.prdName}</h3>
+		        <p class="price"><fmt:formatNumber pattern="#,### 원">${item.prdPrice}</fmt:formatNumber></p>
+		    </div>
+	    </c:forEach>
        </div>
    </section>
-
-   <section class="menuList">
+   
+ 	<section class="menuList">
        <div class="menu-container">
            <div class="menu-column">
                <h3>ABOUT US</h3>
@@ -119,14 +78,8 @@
        </div>
    </section>
 
-    <footer>
-       <span id="footerFont">
-             (주)비트캠프코리아 서울특별시 강남구 비트캠프 602호<br>
-           대표 : 김세현 &emsp; 사업자등록번호 : 200-65-30201 &emsp; 통신판매업신고번호 : 제 2024-서울비트캠프-2770호 &emsp; 개인정보관리자 : 신재영<br>
-           대표번호 : 1234-5678 &emsp; 팩스번호 : 02-1234-5678 &emsp; 메일 : bitcamp@bit.co.kr &emsp; 호스팅제공 : 비트캠프스(주)<br>
-           copyright. 2024. www.bitcampket.com. All rights reserved.<br>
-       </span>
-    </footer>
+<jsp:include page="footer.jsp" />
+
 
 </body>
 </html>

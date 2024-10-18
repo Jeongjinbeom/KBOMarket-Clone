@@ -1,0 +1,392 @@
+@charset "UTF-8";
+
+#goodsDetailDiv{
+	margin: 30px auto;
+}
+
+#history{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+
+#history a{
+	color: #888;
+	text-decoration: none;
+	font-size: 0.7em;
+	margin-right: 10px;
+}
+
+#history a:hover{
+	text-decoration: underline;
+}
+
+#selectTeam{
+	padding: 5px 10px;
+	border:0px;
+	font-size: 0.7em;
+}
+
+
+#detailDiv1{
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+#detailImage{
+	width: 50%;
+}
+
+#detailImage .detailImg{
+	width: 100%;
+	float: left;
+}
+
+#detailContent{
+	display: grid;	
+}
+
+#detailDiv1 .views{
+	font-size: 0.8em;
+	height: 30px;
+}
+
+#detailDiv1 .title pre{
+	font-size: 1.3em; font-weight: 700;
+	height: 50px; line-height: 50px;
+	border-bottom: 1px solid #ccc;
+}
+
+#detailDiv1 .tr{
+	font-size: 1.0em; font-weight: 400;
+	height: 40px; line-height: 40px;
+	color: #999;
+}
+
+#detailDiv1 #price{
+	margin-top: 30px;
+}
+#detailDiv1 .price{
+	font-size: 1.0em; 
+	color: #333;
+	font-weight: 700;
+}
+#detailDiv1 #prdNo{
+	margin-bottom: 30px;
+}
+
+
+#detailDiv1 .firsttd{
+	margin-right: 50px;
+}
+
+#detailDiv1 .selectSize{
+	height: 60px; line-height: 60px;
+	border-top: 1px solid #ccc;
+	border-bottom:1px solid #ccc;
+}
+
+#detailDiv1 .selectSize span{
+	margin-right: 50px;
+	font-size: 1.0em; 
+	color: #999;
+}
+
+#detailDiv1 .selectSize #prdSizeSelect{
+	width: 80%; height: 30px;
+	padding: 0 10px; color: #999;
+	border: 1px solid #ccc;
+}
+
+#detailDiv1 #detailBtnDiv{
+	margin-top: 30px;
+}
+
+#detailDiv1 #orderDiv{
+	display: inline-block;
+}
+
+#detailDiv1 .orderDiv{
+	height: 80px; 
+	border-bottom: 1px solid #333;
+	background: #333;
+	color: #fff;
+	padding-top: 20px;
+}
+#orderTable{
+	width: 100%; height: 30px;
+	border-collapse: collapse; border: 0;
+	padding: 0;
+}
+
+#orderTable #up, #orderTable #down{
+	margin: 0;
+	width: 15px; height: 15px;
+	background: #fff;
+	font-size:0.5em; color: #333; border: 0px;
+}
+
+.buttonContainer {
+    display: flex; /* Flexbox 활성화 */
+    flex-direction: column; /* 세로 정렬 */
+    align-items: left;
+}
+
+#detailDiv1 .orderDiv td:nth-child(1){
+	width: 60%;
+}
+#detailDiv1 .orderDiv td:nth-child(2){
+	width: 10%;
+	text-align: right;
+}
+#detailDiv1 .orderDiv td:nth-child(3){
+	width: 10%;
+}
+#detailDiv1 .orderDiv td:nth-child(4){
+	width: 20%;
+}
+#detailDiv1 .orderSizeTitle{
+	padding-left: 20px;
+	font-size: 0.8em;
+}
+
+#detailDiv1 #qty{
+	width: 30px; height: 30px;
+	text-align: center;
+	outline: none; border: 0px;
+}
+
+#detailDiv1 input::-webkit-outer-spin-button,
+#detailDiv1 input::-webkit-inner-spin-button {
+  -webkit-appearance:none;
+  margin: 0;
+}
+
+/* Firefox */
+#detailDiv1 input[type=number] {
+  -moz-appearance:textfield;
+}
+
+#detailDiv1 #detailBtnDiv #cartBtn{
+	width: 48%; height: 30px;
+	background: #fff; color: #333;
+	border: 1px solid #333;
+	cursor: pointer;
+}
+
+#detailDiv1 #detailBtnDiv #cartBtn:hover{
+	color: #ccc;
+	border: 1px solid #ccc;
+}
+
+#detailDiv1 #detailBtnDiv #orderBtn{
+	margin-left: 5px;
+	width: 50%; height: 30px;
+	background: #333; color: #fff;
+	border: 1px solid #333;
+	cursor: pointer;
+}
+
+#detailDiv1 #detailBtnDiv #orderBtn:hover{
+	background: #555;
+}
+
+#detailDiv1 #detailBtnDiv{
+	display: revert-layer;
+}
+#detailDiv2{
+	clear: both;
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding-bottom: 200px;
+}
+
+#detailDiv2 ul{
+	margin-top: 100px;
+}
+#detailDiv2 ul li{
+	height: 40px; line-height: 40px;
+	list-style-type: none;
+	float: left;
+	width: 20%; text-align: center;
+	font-size: 0.8em;
+	border: 1px solid #ccc; box-sizing: border-box;
+	cursor: pointer;
+}
+
+#detailDiv2 ul li:hover{
+	background: #333;
+	color: #fff;
+	border:1px solid #333;
+}
+
+.clickLi{
+	background: #333;
+	color: #fff;
+	border:1px solid #333 !important;
+}
+
+#ctgContentDiv{
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+    padding-top: 30px;
+    display: inline-block
+}
+#reviewAllDiv{
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+	display: inline-block;
+	border-bottom: 1px solid #ccc;
+}
+#reviewTitle{
+	padding: 20px 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+#reviewName{
+	float: left;
+	width: 30%;
+	padding: 20px;
+}
+#reviewName span{
+	color: #333;	
+	font-size: 1.0em;
+	font-weight: 700;
+}
+#reviewContent{
+	float: left;
+	border-left: 1px solid #eee;
+	width: 70%;
+	padding: 20px;
+}
+
+#reviewContent .reviewTitle{
+	border-bottom: 1px solid #eee;
+	width: 100%;
+	height: 40px;
+	font-size: 1.1em; font-weight: 400;
+}
+
+#reviewContent .reviewTitle span{
+	float: right;
+	color: #999;
+	font-size: 0.8em; font-weight: 100;
+}
+
+#reviewContent .reviewContent{
+	padding: 30px 0;
+	font-size: 1.0em;
+}
+
+#reviewContent .reviewLike{
+	display: flex;
+    align-items: center;
+	font-size: 0.8em; font-weight: 400;
+	color: tomato;
+	float: right;
+}
+
+#pagingHTML{
+	text-align: center;
+	margin-top: 50px;
+}
+#currentPaging{
+	margin: 0 5px; padding: 5px 10px;
+	border-radius: 5px;
+	color: #fff;
+	background: #333;
+	cursor: pointer;
+}
+
+#paging{
+	margin: 0 5px; padding: 5px 10px;
+	border-radius: 5px;
+	color: #fff;
+	background: #ccc;
+	cursor: pointer;
+}
+
+.material-symbols-outlined {
+	font-size: 20px !important;
+	margin-right: 10px;
+	color: #333;
+	cursor:pointer;
+	font-variation-settings:
+	'FILL' 0,
+	'wght' 400,
+	'GRAD' 0,
+	'opsz' 24
+}
+
+.material-symbols-outlined:hover{
+	color: tomato;
+}
+
+/* 반응형 처리 */
+@media (max-width: 1200px) {
+	#history{
+		padding-left: 10px;
+	}
+	#goodsDetailDiv{
+		padding: 0 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	#history{
+		padding-left: 10px;
+	}
+    #detailDiv1 {
+        flex-direction: column; /* 세로 정렬 */
+    }
+    
+    #detailContent{
+    	width: 100%;
+    	padding: 0 10px;
+    }
+
+    #detailImage {
+        width: 100%; /* 이미지가 전체 너비를 차지하게 */
+    }
+
+    #reviewName {
+        width: 100%; /* 리뷰 이름 영역의 너비 조정 */
+        font-size: 0.8em;
+    }
+
+    #reviewContent {
+        width: 100%; /* 리뷰 내용 영역의 너비 조정 */
+        border-left: none; /* 왼쪽 경계선 제거 */
+        padding: 15px; /* 패딩 조정 */
+    }
+
+    #detailDiv2 ul li {
+        width: 50%; /* 리스트 항목의 너비 조정 */
+    }
+    #selectTeam {
+        width: 80%; /* 팀 선택 박스 너비 조정 */
+    }
+
+    #detailDiv1 .firsttd {
+        margin-right: 20px; /* 첫 번째 td 마진 조정 */
+    }
+
+    #detailDiv2 ul li {
+        width: 100%; /* 리스트 항목의 너비를 100%로 설정 */
+    }
+
+    #detailDiv1 .selectSize #prdSizeSelect {
+        width: 70%; /* 사이즈 선택 박스의 너비 조정 */
+    }
+
+    #detailDiv1 #detailBtnDiv #cartBtn,
+    #detailDiv1 #detailBtnDiv #orderBtn {
+        width: 100%; /* 버튼을 전체 너비로 설정 */
+        margin: 5px 0; /* 버튼 간격 조정 */
+    }
+}

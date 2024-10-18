@@ -1,0 +1,84 @@
+/* 추가 */
+nav {
+  position: relative; 
+  display: flex;
+  height: 60px;
+  align-items: center;
+  /* justify-content: space-between; */
+  padding: 0 30%;
+}
+
+nav div {
+  flex:1;
+  width: 200px;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    /* transition: background-color 0.3s; */
+}
+
+nav div:hover {
+  background: #eee;
+  color: #fff;
+}
+
+nav .active {
+  background: #eee;
+  color: #fff;
+}
+
+nav .animation {
+  position: absolute;
+  top: 100%;
+  left: 400;
+  width: 200px;
+  height: 2px;
+  background-color: #0022ff;
+  transition: 0.5s; // 위치가 변할 때 부드럽게 애니메이션이 되도록 설정
+}
+
+
+em a{text-decoration-line: none;}
+em a:link { color:#777777; }
+em a:hover { color:blue; }
+.sub_content {
+    padding: 45px 0 0 0;
+} 
+.location_cont{
+	max-width: 1150px;
+	width:100%;
+  	margin: 0 auto;
+    line-height: 1.5;
+    font-family: Malgun Gothic,"맑은 고딕",AppleGothic,Dotum,"돋움",sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    display: block;
+    padding: 12px 0 10px 0;
+    color: #777777;
+    font-size: 11px;
+ }
+
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0 1%; /* 네비게이션 패딩 조정 */
+  }
+
+  nav div {
+    flex: 1 1 53%; /* 작은 화면에서 2개씩 배치 (약간 넓게) */
+    margin: 5px 0; /* 세로 간격 조정 */
+  }
+}
+
+@media (max-width: 480px) {
+  nav div {
+    flex: 1 1 100%; /* 한 줄에 하나씩 배치 */
+    margin: 5px 0; /* 세로 간격 조정 */
+  }
+}

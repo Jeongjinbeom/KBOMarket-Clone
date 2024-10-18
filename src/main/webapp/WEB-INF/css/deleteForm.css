@@ -1,0 +1,142 @@
+
+a{text-decoration-line: none;}
+a:link { color:#777777; }
+a:hover { color:blue; }
+.sub_content {
+    padding: 45px 0 0 0;
+}
+
+.location_cont{
+	max-width: 1150px;
+	width:100%;
+  	margin: 0 auto;
+    line-height: 1.5;
+    font-family: Malgun Gothic,"맑은 고딕",AppleGothic,Dotum,"돋움",sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    display: block;
+    padding: 12px 0 10px 0;
+    color: #777777;
+    font-size: 11px;
+ }
+ 
+.signup-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-container h1 {
+  font-size: 24px;
+  color: #333;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.signup-form {
+  /* display: grid;
+  gap: 15px; */
+  //display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  max-width: 300px;
+}
+
+.signup-form-group {
+  display: flex;
+  /* align-items: center; */
+  margin-bottom: 10px;
+   width: 300px;
+}
+
+.signup-label {
+  width: 100px;
+  /* text-align: right; */
+  padding-right: 20px;
+  color: #333;
+}
+
+.signup-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.signup-btn-check {
+  margin-left: 10px;
+  padding: 6px 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signup-btn-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+}
+
+.signup-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.signup-btn-primary {
+  width: 300px;
+  background-color: #d9a648;
+  color: #fff;
+}
+
+.signup-btn-secondary {
+  width: 300px;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/*반응형*/
+@media (max-width: 600px) {
+    .signup-container {
+        padding: 10px;
+    }
+    .signup-form {
+        max-width: 100%;
+    }
+    .signup-form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .signup-label {
+        width: auto;
+        padding-right: 0;
+        margin-bottom: 5px;
+    }
+    .signup-btn {
+        width: 100%;
+    }
+    .signup-btn-primary,
+    .signup-btn-secondary {
+        width: 100%;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .signup-form {
+        max-width: 400px;
+    }
+    .signup-btn {
+        width: 45%;
+    }
+}

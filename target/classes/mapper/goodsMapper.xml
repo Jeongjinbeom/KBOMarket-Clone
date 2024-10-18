@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="goods.dao.GoodsDAO">
+
+	<!-- goodsList.jsp -->
+	<select id="getGoodsList" parameterType="java.util.Map" resultType="goodsDTO">
+		select * from kbogoods where teamId=#{teamId} order by ${order} ${orderDirection}
+	</select>
+	
+	<select id="getGoodsList2" parameterType="java.util.Map" resultType="goodsDTO">
+		select * from kbogoods where teamId=#{teamId} and ctg=#{ctg} order by ${order} ${orderDirection}
+	</select>
+	
+		<select id="getTotalGoods" parameterType="String" resultType="int">
+		select count(*) from kbogoods where teamId=#{teamId}
+	</select>
+	
+	<select id="getTotalGoods2" parameterType="java.util.Map" resultType="int">
+		select count(*) from kbogoods where teamId=#{teamId} and ctg=#{ctg}
+	</select>
+	
+	<select id="getTeamName" parameterType="String" resultType="String">
+		select teamName from kboteam where teamId=#{teamId}
+	</select>
+	
+	
+	<!-- goodsDetail.jsp -->
+	<select id="getGoods" parameterType="String" resultType="goodsDTO">
+		select * from kbogoods where prdNo=#{prdNo}
+	</select>
+	
+	<select id="getReviewCount" parameterType="java.util.Map" resultType="reviewDTO">
+		select * from kboreview where prdNo=#{prdNo} limit #{startNum}, #{endNum}
+	</select>
+	
+	<select id="goodsTotalA" parameterType="String" resultType="int">
+		select count(*) from kboreview where prdNo=#{prdNo}
+	</select>
+	
+	<update id="updateViews" parameterType="String">
+		update kbogoods set views = views + 1 where prdNo=#{prdNo}
+	</update>
+	
+	<!-- Review -->
+	<select id="getUserName" parameterType="String" resultType="String">
+		select name from kbouser where userId = #{userId}
+	</select>
+	
+	<update id="reviewLike" parameterType="int">
+		update kboreview set likes = likes + 1 where reviewNo=#{reviewNo}
+	</update>
+	
+	
+	
+	
+	
+	<!-- 상품 등록 -->
+	<insert id="goodsWrite">
+		insert into KBOGoods(teamId, ctg, prdName, prdPrice, prdSize, qty, imageFileName, imageOriginalFileName)
+		values 
+		<foreach collection="list" item="dto" separator=",">
+			(#{dto.teamId}, #{dto.ctg}, #{dto.prdName}, #{dto.prdPrice}, #{dto.prdSize}, #{dto.qty}, #{dto.imageFileName}, #{dto.imageOriginalFileName})
+		</foreach>
+	</insert>
+	<!-- 상품 등록 목록 가져가기 -->
+	<select id="getAdminList" resultType="goodsDTO">
+		select * from KBOGoods order by prdNo desc
+	</select>
+	
+	<!-- 이미지 파일 이름 얻기 -->
+	<select id="getImageFileName" parameterType="int" resultType="String">
+		select imageFileName from KBOGoods where prdNo = #{prdNo}
+	</select>
+	
+	<!-- 삭제 -->
+	<delete id="deleteAdminList">
+		delete from KBOGoods where imageFileName in
+		<foreach collection="list" item="str" open="(" close= ")" separator=",">
+			#{str}
+		</foreach>
+	</delete>
+	
+	<!-- 조회순으로 출력 -->
+	<select id="getIndexList" resultType="goodsDTO">
+		select * from KBOGoods order by views desc LIMIT 10
+	</select>
+	
+	<!-- 수정할 항목 친구들 가져가기 -->
+	<select id="getAdminUpdateList" parameterType="String" resultType="goodsDTO">
+		select * from KBOGoods where prdNo = #{prdNo}
+	</select>
+	
+	<!-- 상품 수정 -->
+	<update id="adminUpdate" parameterType="goodsDTO">
+		update KBOGoods set teamId = #{teamId},
+							ctg = #{ctg},
+							prdName = #{prdName},
+							prdPrice = #{prdPrice},
+							prdSize = #{prdSize},
+							qty = #{qty},
+							imageFileName = #{imageFileName},
+							imageOriginalFileName = #{imageOriginalFileName}
+		where prdNo = #{prdNo}
+							
+	</update>
+	
+</mapper>

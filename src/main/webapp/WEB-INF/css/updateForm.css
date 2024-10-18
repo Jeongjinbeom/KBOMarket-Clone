@@ -1,0 +1,204 @@
+/* em{
+	margin-left:-20px;
+} */
+a{text-decoration-line: none;}
+a:link { color:#777777; }
+a:hover { color:blue; }
+.sub_content {
+    padding: 45px 0 0 0;
+}
+.location_cont{
+	max-width: 1150px;
+	width:100%;
+  	margin: 0 auto;
+    line-height: 1.5;
+    font-family: Malgun Gothic,"맑은 고딕",AppleGothic,Dotum,"돋움",sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    display: block;
+    padding: 12px 0 10px 0;
+    color: #777777;
+    font-size: 11px;
+ }
+.signup-input[readonly] {
+    background-color: #e9ecef; 
+    border-color: #e9ecef;
+}
+.signup-input[readonly]:focus {
+  border-color: #e9ecef; 
+  outline: none;
+} 
+.location_cont{
+	max-width: 1150px;
+	width:100%;
+  	margin: 0 auto;
+    line-height: 1.5;
+    font-family: Malgun Gothic,"맑은 고딕",AppleGothic,Dotum,"돋움",sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    display: block;
+    padding: 12px 0 10px 0;
+    color: #777777;
+    font-size: 11px;
+ }
+.signup-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-container h1 {
+  font-size: 24px;
+  color: #333;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.signup-step {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.signup-step span {
+  margin-left: 10px;
+  color: #888;
+}
+
+.signup-step span.active {
+  color: #333;
+  font-weight: bold;
+}
+
+.signup-form {
+  /* display: grid;
+  gap: 15px; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+}
+
+.signup-form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.signup-label {
+  width: 150px;
+  /* text-align: right; */
+  padding-right: 20px;
+  color: #333;
+}
+
+.signup-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.signup-btn-check {
+  margin-left: 10px;
+  padding: 6px 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signup-checkbox-group {
+  margin-left: 170px;
+}
+
+.signup-checkbox-group label {
+  width: auto;
+  margin-right: 15px;
+}
+
+.signup-btn-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.signup-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.signup-btn-primary {
+  background-color: #d9a648;
+  color: #fff;
+}
+
+.signup-btn-third {
+  background-color: #ced4da;
+  color: #333;
+}
+/* 유효하지 않을 경우 빨간색으로 변경 */
+.signup-input:invalid {
+    border-color: red;
+}
+.signup-btn-secondary {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* 미디어 쿼리 추가 */
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 15px; /* 패딩 줄이기 */
+    }
+
+    .signup-label {
+        width: auto; /* 라벨 너비 자동 조정 */
+        padding-right: 10px; /* 패딩 줄이기 */
+    }
+
+    .signup-form-group {
+        flex-direction: column; /* 세로 방향으로 나열 */
+        align-items: flex-start; /* 왼쪽 정렬 */
+    }
+
+    .signup-input {
+        width: 100%; /* 입력 필드 너비를 가득 채움 */
+    }
+
+    .signup-btn-group {
+        flex-direction: column; /* 버튼을 세로로 나열 */
+        align-items: center; /* 중앙 정렬 */
+    }
+
+    .signup-btn {
+        width: 100%; /* 버튼을 가득 차게 설정 */
+        margin: 5px 0; /* 버튼 간격 조정 */
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-container h1 {
+        font-size: 20px; /* 제목 크기 줄이기 */
+    }
+
+    .signup-btn-primary,
+    .signup-btn-secondary,
+    .signup-btn-third {
+        width: 100%; /* 버튼을 가득 차게 설정 */
+    }
+
+    .signup-input {
+        padding: 6px; /* 입력 필드 패딩 줄이기 */
+    }
+}

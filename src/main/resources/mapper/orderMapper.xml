@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="goods.dao.OrderDAO">
+
+	<insert id="insertCart" parameterType="CartDTO">
+		insert into kbocart (userId, prdNo, orderPrice, orderSize, qty) values(#{userId}, #{prdNo}, #{orderPrice}, #{orderSize}, #{qty})
+	</insert>
+	
+	<select id="getGoodsList" parameterType="int" resultType="goodsDTO">
+		select * from kbogoods where prdNo=#{prdNo} order by regDate desc
+	</select>
+	
+	<select id="getOrderUser" parameterType="String" resultType="userDTO">
+		select * from kbouser where userId=#{userId}
+	</select>
+	
+	<select id="getGoods" parameterType="int" resultType="goodsDTO">
+		select * from kbogoods where prdNo=#{prdNo}
+	</select>
+	
+	<insert id="insertOrderInfo" parameterType="orderDTO">
+		insert into kboorder (userId, prdNo, orderPrice, orderSize, name, tel, zipcode, addr1, addr2, qty) 
+		values (#{userId}, #{prdNo}, #{orderPrice}, #{orderSize}, #{name}, #{tel}, #{zipcode}, #{addr1}, #{addr2}, #{qty})
+	</insert>
+	
+	<select id="getOrderDTO" parameterType="String" resultType="orderDTO">
+		select * from kboorder where userId=#{userId} order by regDate desc
+	</select>
+	
+	<select id="getCartDTO" parameterType="String" resultType="cartDTO">
+		select * from kbocart where userId=#{userId}
+	</select>
+	
+	<delete id="orderDelete" parameterType="String">
+    	delete from kboorder where ordNo=#{ordNo}
+    </delete>
+    
+    <delete id="cartDelete" parameterType="String">
+    	delete from kbocart where cartNo=#{cartNo}
+    </delete>
+</mapper>
