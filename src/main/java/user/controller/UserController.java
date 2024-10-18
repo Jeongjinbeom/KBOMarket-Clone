@@ -105,8 +105,8 @@ public class UserController {
 	    
 	    MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
 	    params.add("grant_type", "authorization_code");
-	    params.add("client_id", "YOUR_CLIENT_ID"); // 카카오 앱의 클라이언트 ID
-	    params.add("redirect_uri", "http://localhost:3000/user/oauth/redirected/kakao");
+	    params.add("client_id", "319352d2da2702df6d942999d2ec691d"); // 카카오 앱의 클라이언트 ID
+	    params.add("redirect_uri", "http://localhost:8080/KBOMarket/user/oauth");
 	    params.add("code", code);
 
 	    HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(params, headers);
