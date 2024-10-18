@@ -1,10 +1,15 @@
 package admin.service.impl;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import admin.service.AdminService;
 import admin.service.ObjectStorageService;
@@ -23,6 +28,8 @@ public class AdminServiceImpl implements AdminService{
 
 	private String bucketName = "bitcamp-9th-bucket-138";
 
+	@Autowired
+	private HttpSession session;
 	
 	
 	@Override
@@ -55,6 +62,66 @@ public class AdminServiceImpl implements AdminService{
 		
 		// DB 삭제
 		goodsDAO.deleteAdminList(list);
+	}
+
+	
+	// 조회수별 데이터 가져오기
+	@Override
+	public List<GoodsDTO> getIndexList() {
+		
+		return goodsDAO.getIndexList();
+	}
+
+	@Override
+	public GoodsDTO getAdminUpdateList(String prdNo) {
+		
+		return goodsDAO.getAdminUpdateList(prdNo);
+	}
+
+	@Override
+	public void adminUpdate(GoodsDTO goodsDTO, MultipartFile imageFile) {
+		String filePath = session.getServletContext().getRealPath("WEB-INF/storage");
+		
+		GoodsDTO dto = goodsDAO.getAdminUpdateList(goodsDTO.getPrdNo()+"");
+		
+		
+		
+		String imageFileName;
+		
+		if(imageFile.getSize() != 0) {
+			imageFileName = dto.getImageFileName();
+			
+			// NCP 이미지 삭제
+			objectStorageService.adminDeleteImageFile(bucketName, "storage/", imageFileName);
+			
+			// 이미지 업로드
+			imageFileName = objectStorageService.uploadFile(bucketName, "storage/", imageFile);
+			
+			String imageOriginalFileName = imageFile.getOriginalFilename();
+			File file = new File(filePath, imageOriginalFileName);
+			
+			try {
+				imageFile.transferTo(file);
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			goodsDTO.setImageFileName(imageFileName);
+			goodsDTO.setImageOriginalFileName(imageOriginalFileName);
+			
+		}else {
+			goodsDTO.setImageFileName(dto.getImageFileName());
+			goodsDTO.setImageOriginalFileName(dto.getImageOriginalFileName());
+		}
+		
+		System.out.println("파일 UUID : " + goodsDTO.getImageFileName());
+		System.out.println("파일 원래이름 : " + goodsDTO.getImageOriginalFileName());
+		
+		
+		goodsDAO.adminUpdate(goodsDTO);
+		
 	}
 
 }

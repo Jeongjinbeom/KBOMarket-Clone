@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -119,9 +120,29 @@ public class AdminController {
 	}
 	
 	 @RequestMapping(value="admin/deleteAdminList", produces = "text/html; charset=UTF-8")
-	 @ResponseBody
-	 public void deleteAdminList(@RequestParam String[] check) {
+	 public String deleteAdminList(@RequestParam String[] check) {
 		 adminService.deleteAdminList(check);
+		 return "redirect:adminList";
+	 }
+	 
+	 @RequestMapping(value="admin/adminUpdateForm", produces = "text/html; charset=UTF-8")
+	 public String adminUpdateForm(@RequestParam String prdNo, Model model) {
+		 
+		 GoodsDTO goodsDTO = adminService.getAdminUpdateList(prdNo);
+		 
+		 model.addAttribute("goodsDTO", goodsDTO);
+		 
+		 return "admin/adminUpdateForm";
+	 }
+	 
+	 @RequestMapping(value="admin/adminUpdate", produces = "text/html; charset=UTF-8")
+	 @ResponseBody
+	 public String adminUpdate(@ModelAttribute GoodsDTO goodsDTO,
+			 				   @RequestParam("imageFile") MultipartFile imageFile) {
+		 
+		 adminService.adminUpdate(goodsDTO, imageFile);
+		 
+		 return "상품이 수정되었습니다.";
 	 }
 	
 }
