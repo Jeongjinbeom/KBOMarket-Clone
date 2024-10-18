@@ -124,5 +124,9 @@ function checkPost() {
     }).open();
 }
 </script>
+
+<script type="text/javascript">
+
+</script>
 </body>
 </html>

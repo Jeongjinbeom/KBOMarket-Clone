@@ -18,3 +18,6 @@ public class NaverConfiguration {
 	private @Value("${ncp.endPoint}")String endPoint;
 	
 }
+
+
+

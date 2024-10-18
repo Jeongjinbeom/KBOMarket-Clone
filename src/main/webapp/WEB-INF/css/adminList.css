@@ -98,9 +98,9 @@ hr {
 }
 
 .simple-pagination li.active span {
-    background-color: #24388D;
+    background-color: #333333;
     color: #fff;
-    border-color: #24388D;
+    border-color: #333333;
 }
 
 #deleteSelected {
@@ -108,7 +108,7 @@ hr {
     margin-top: 20px;
     margin-left: 50px;
     padding: 10px 20px;
-    background-color: #24388D;
+    background-color: #333333;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -117,7 +117,7 @@ hr {
 }
 
 #deleteSelected:hover {
-    background-color: #0056b3;
+    background-color: #6A685E;
 }
 
 .admin-item input[type="checkbox"] {
