@@ -44,4 +44,9 @@
 			</property>
 		</bean>
 	
+	
+
+	<!-- kakao -->
+	<context:component-scan base-package="kakao.service.impl"/>
+	<context:component-scan base-package="kakao.dao"/>
 </beans>

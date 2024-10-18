@@ -64,20 +64,20 @@
   
             <div class="signup-form-group">
                 <label for="tel" class="signup-label">휴대폰번호</label>
-                <input type="text" id="tel" name="tel" value="${userDTO.tel }" class="signup-input" style="width: 100%; max-width: 350px;">
+                <input type="text" id="tel" name="tel" value="${userDTO.tel}" class="signup-input" style="width: 100%; max-width: 350px;">
             </div>
             
             <div class="signup-form-group">
                 <label for="phone" class="signup-label">주소</label>
-                <input type="text" name="zipcode" id="zipcode" value="${userDTO.zipcode }" size="6" class="signup-input" style="width: 100%; max-width: 250px;"/>
+                <input type="text" name="zipcode" id="zipcode" value="${userDTO.zipcode}" size="6" class="signup-input" style="width: 100%; max-width: 250px;"/>
                 <input type="button" value="우편번호 검색" onclick="checkPost(); return false;" class="signup-btn signup-btn-secondary">
 			</div>
 			<div class="signup-form-group">
-                <input type="text" id="addr1" name="addr1" placeholder="주소" value="${userDTO.addr1 }"
+                <input type="text" id="addr1" name="addr1" placeholder="주소" value="${userDTO.addr1}"
               		  class="signup-input" style="width: 100%; max-width: 550px;">
             </div>
             <div class="signup-form-group">
-              	<input type="text"id="addr2" name="addr2" placeholder="상세주소" value="${userDTO.addr2 }"
+              	<input type="text"id="addr2" name="addr2" placeholder="상세주소" value="${userDTO.addr2}"
               	class="signup-input" style="width: 100%; max-width: 550px;">
             </div>
             
