@@ -20,4 +20,9 @@
 	<context:component-scan base-package="admin.service.impl"/>
 
 	<context:component-scan base-package="spring.conf"/>
+	
+	
+	<!-- kakao -->
+	<context:component-scan base-package="kakao.service.impl"/>
+	<context:component-scan base-package="kakao.dao"/>
 </beans>
