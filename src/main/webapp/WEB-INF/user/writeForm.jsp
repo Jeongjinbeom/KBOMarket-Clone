@@ -82,7 +82,11 @@
             
             <div class="signup-btn-group">
                 <button type="reset" class="signup-btn signup-btn-secondary">취소</button>
+
                 <input type="button" class="signup-btn signup-btn-primary" id="joinBtn" value="회원가입"/>
+
+               <!--  <button class="signup-btn signup-btn-primary" id="joinBtn">회원가입</button> -->
+
             </div>
         </form>
     </div>
@@ -123,6 +127,10 @@ function checkPost() {
         }
     }).open();
 }
+</script>
+
+<script type="text/javascript">
+
 </script>
 </body>
 </html>

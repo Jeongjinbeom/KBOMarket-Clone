@@ -41,4 +41,10 @@ public interface GoodsDAO {
 
 	public void deleteAdminList(List<String> list);
 
+	public List<GoodsDTO> getIndexList();
+
+	public GoodsDTO getAdminUpdateList(String prdNo);
+
+	public void adminUpdate(GoodsDTO goodsDTO);
+
 }

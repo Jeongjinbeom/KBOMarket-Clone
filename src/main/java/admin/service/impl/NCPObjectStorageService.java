@@ -67,5 +67,12 @@ public class NCPObjectStorageService implements ObjectStorageService{
 		}
 		
 	}
+
+	@Override
+	public void adminDeleteImageFile(String bucketName, String directoryPath, String imageFileName) {
+		
+		s3.deleteObject(bucketName, directoryPath + imageFileName);
+		
+	}
 	
 }

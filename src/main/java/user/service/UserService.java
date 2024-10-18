@@ -23,6 +23,9 @@ public interface UserService {
 	public UserDTO deleteuserPwd(String userId, String pwd);
 
 
+	public void saveUser(UserDTO user);
+
+	public UserDTO findUser(UserDTO user);
 
 
 }

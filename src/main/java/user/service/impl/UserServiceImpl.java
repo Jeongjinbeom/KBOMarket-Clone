@@ -11,27 +11,34 @@ import user.dao.UserDAO;
 import user.service.UserService;
 
 @Service
-public class UserServiceImpl implements UserService {	
+public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserDAO userDAO;
-	
-	//아이디 체크
+
+
+	// 아이디 체크
 	@Override
 	public String getExistId(String userId) {
 		UserDTO userDTO = userDAO.getExistId(userId);
+
 		
 		//System.out.println(userDTO);
 		
 		if(userDTO == null)
+
+		System.out.println(userDTO);
+
+		if (userDTO == null)
+
 			return "non_exist";
 		else
 			return "exist";
 	}
-	
-	//회원가입
+
+	// 회원가입
 	@Override
 	public void join(UserDTO userDTO) {
-		userDAO.join(userDTO);		
+		userDAO.join(userDTO);
 	}
 
 	//로그인
@@ -43,6 +50,7 @@ public class UserServiceImpl implements UserService {
 	//
 	@Override
 	public void update(UserDTO userDTO) {
+		System.out.println("userDTO.impl" + userDTO);
 		userDAO.update(userDTO);
 	}
 	
@@ -76,13 +84,20 @@ public class UserServiceImpl implements UserService {
 		return userDTO;
 	}
 
+	@Override
+	public void saveUser(UserDTO user) {
+		userDAO.saveUser(user);
+	}
+
 
 	//이메일 인증
-	
+
+	@Override
+	public UserDTO findUser(UserDTO user) {
+		return userDAO.findUser(user);
+	}
 
 
-	
 
 
-	
 }

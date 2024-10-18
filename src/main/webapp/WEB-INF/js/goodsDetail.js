@@ -43,10 +43,21 @@ function selectSize(selectElement) {
     }
 }
 
+function buy() {
+    if ($('#orderForm').length === 0) {
+        alert('옵션을 선택해 주세요.');
+        return;
+    }
+    
+    $('#orderForm').submit();
+}
+
+
 function formatPrice(price) {
     // 가격을 문자열로 변환하고, 정규 표현식을 사용하여 형식화
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + ' 원';
 }
+
 
 function updatePrice() {
     const qty = document.getElementById('qty').value;
@@ -76,8 +87,6 @@ function changeQuantity(delta) {
     qtyInput.value = currentQty; // 업데이트된 수량을 입력 필드에 설정
     updatePrice(); // 가격 업데이트
 }
-
-
 function upLike(reviewNo){
 	$.ajax({
 		type : 'post',
