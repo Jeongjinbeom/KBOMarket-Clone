@@ -15,5 +15,15 @@ public interface UserDAO {
 
 	public UserDTO login(Map<String, String> map);
 
+	public void update(UserDTO userDTO);
+
+	public UserDTO updateuserId(String userId);
+	
+	public UserDTO deleteuserPwd(String pwd);
+	
+	public UserDTO getExistPwd(Map<String, String> map);
+
+	public void delete(String userId);
+
 
 }

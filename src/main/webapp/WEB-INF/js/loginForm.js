@@ -1,6 +1,6 @@
 $(function() {
-    // 로그인 버튼
-    $('#loginBtn').click(function() {
+	function login(){
+    //로그인
         $('#checkidDiv').empty();
         $('#checkpwdDiv').empty();
 
@@ -31,8 +31,21 @@ $(function() {
                 }
             }); // ajax
 		}
+	}
+	
+	//버튼 클릭
+	$('#loginBtn').click(function() {	
+		login();
     }); //loginBtn
-
+	
+	//엔터
+	$(document).on('keypress', function(event) {
+        if (event.key === 'Enter') {
+            login();
+        }
+    });
+    
+    
     // 다 작성했을 때 div의 값이 사라지도록
     $(document).on('click', function(event) {
         // 아이디와 비밀번호 입력란 외부 클릭 시

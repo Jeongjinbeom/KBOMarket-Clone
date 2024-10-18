@@ -20,6 +20,6 @@ public class MainController {
 		
 		session.invalidate();
 		
-		return "index";
+		return "redirect:/";
 	}
 }

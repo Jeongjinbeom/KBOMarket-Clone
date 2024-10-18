@@ -21,6 +21,32 @@
 	<select id="login" parameterType="java.util.Map" resultType="userDTO">
 		select * from KBOUser where userId = #{userId} and pwd = #{pwd}
 	</select>
+
+	<!-- 정보 수정 - db에 저장-->
+	<update id="update" parameterType="userDTO">
+		update KBOUser set name = #{name}, pwd = #{pwd},
+		email = #{email}, tel = #{tel}, zipcode=#{zipcode},
+		addr1 = #{addr1}, addr2 = #{addr2}
+		where userId = #{userId};	
+	</update>
 	
-	<!--  -->
+	<!-- 수정한 정보 db에서 가져오기-->
+	<select id="updateuserId" parameterType="String" resultType="userDTO">
+ 		select * from KBOUser where userId=#{userId}
+ 	</select>
+ 	
+ 	<!-- 탈퇴 전 비밀번호 확인 -->
+ 	<select id="getExistPwd" parameterType="java.util.Map" resultType="userDTO">
+ 		select * from KBOUser where userId=#{userId} and pwd=#{pwd}
+ 	</select>
+ 	
+ 	<!-- 탈퇴 -->
+ 	<delete id="delete" parameterType="String">
+ 		delete from KBOUser where userId=#{userId}
+ 	</delete>
+ 	
+	<select id="deleteuserPwd" parameterType="String" resultType="userDTO">
+ 		select * from KBOUser where pwd=#{pwd}
+ 	</select>
+ 	
  </mapper>

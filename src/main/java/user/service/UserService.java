@@ -12,6 +12,17 @@ public interface UserService {
 
 	public UserDTO login(Map<String, String> map);
 
+	public void update(UserDTO userDTO);
+
+	public UserDTO updateuserId(String userId);
+
+	public UserDTO getExistPwd(String userId, String pwd);
+
+	public void delete(String userId);
+
+	public UserDTO deleteuserPwd(String userId, String pwd);
+
+
 
 
 }

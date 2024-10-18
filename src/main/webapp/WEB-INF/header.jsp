@@ -13,12 +13,13 @@
 				<c:if test="${not empty sessionScope.name}">
         			<p>${sessionScope.name}님</p>
         			<a href="/KBOMarket/logout" class="logout">LOGOUT</a>
+        			<a href="/KBOMarket/user/myPage" class="mypage">MYPAGE</a>
    			 	</c:if>
     
 			    <c:if test="${empty sessionScope.name}">
 			        <a href="/KBOMarket/user/loginForm" class="login">LOGIN</a>
+		            <a href="/KBOMarket/user/loginForm" class="mypage">MYPAGE</a>
 			    </c:if>
-               <a href="#" class="mypage">MYPAGE</a>
             </div>
             <div class="icons">
                <span class="icon-heart">&#10084;</span> <span class="icon-cart">&#128722;

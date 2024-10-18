@@ -7,7 +7,27 @@ a:hover { color:blue; }
 .sub_content {
     padding: 45px 0 0 0;
 }
-
+.location_cont{
+	max-width: 1150px;
+	width:100%;
+  	margin: 0 auto;
+    line-height: 1.5;
+    font-family: Malgun Gothic,"맑은 고딕",AppleGothic,Dotum,"돋움",sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    display: block;
+    padding: 12px 0 10px 0;
+    color: #777777;
+    font-size: 11px;
+ }
+.signup-input[readonly] {
+    background-color: #e9ecef; 
+    border-color: #e9ecef;
+}
+.signup-input[readonly]:focus {
+  border-color: #e9ecef; 
+  outline: none;
+} 
 .location_cont{
 	max-width: 1150px;
 	width:100%;
@@ -69,11 +89,10 @@ a:hover { color:blue; }
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-
 }
 
 .signup-label {
-  width: 100px;
+  width: 150px;
   /* text-align: right; */
   padding-right: 20px;
   color: #333;
@@ -95,6 +114,15 @@ a:hover { color:blue; }
   cursor: pointer;
 }
 
+.signup-checkbox-group {
+  margin-left: 170px;
+}
+
+.signup-checkbox-group label {
+  width: auto;
+  margin-right: 15px;
+}
+
 .signup-btn-group {
   display: flex;
   justify-content: center;
@@ -111,19 +139,19 @@ a:hover { color:blue; }
 }
 
 .signup-btn-primary {
-  width: 150px;
   background-color: #d9a648;
   color: #fff;
 }
 
-.signup-btn-secondary {
-  width: 150px;
-  background-color: #f0f0f0;
+.signup-btn-third {
+  background-color: #ced4da;
   color: #333;
 }
-
-.signup-btn-third {
-  width: 300px;
+/* 유효하지 않을 경우 빨간색으로 변경 */
+.signup-input:invalid {
+    border-color: red;
+}
+.signup-btn-secondary {
   background-color: #f0f0f0;
   color: #333;
 }
