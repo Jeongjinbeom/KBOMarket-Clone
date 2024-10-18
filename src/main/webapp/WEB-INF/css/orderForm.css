@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+#allDeleteBtn{
+	float: left;
+	margin:5px 0 0 10px;
+}
+
+#deleteBtn{
+	margin-top: 30px;
+	padding: 10px 20px;
+	background: #333;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+}
+
+#deleteBtn:hover{
+	background: #888;
+}
+#delBtn{
+	padding: 5px 25px;
+	border: 0;
+	color: #fff;
+	margin-bottom: 20px;
+	float: right;
+	text-align: center;
+	background: #333;
+}
+.reviewFormBtn{
+	width: 70px; height: 30px; background: #333; color: #fff; border: 0; cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    #allDeleteBtn {
+        float: none; /* Stack the button vertically */
+        margin: 10px 0; /* Center margin */
+    }
+
+    #deleteBtn, #delBtn {
+        width: 100%; /* Adjust width for padding */
+        margin: 0 auto; /* Center the buttons */
+    }
+     #detailOrderDiv .prdname {
+     	width: 20%;
+     }
+    
+    .reviewFormBtn{
+		width: 100%;
+		font-size: 0.8em;
+	}
+
+    #delBtn {
+        float: none; /* Stack the button vertically */
+        margin: 10px 0;
+    }
+}

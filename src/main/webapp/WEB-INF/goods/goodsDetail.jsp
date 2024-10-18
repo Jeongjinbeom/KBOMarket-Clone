@@ -101,9 +101,6 @@
 <script type="text/javascript" src="../js/goodsDetail.js"></script>
 <script type="text/javascript">
 $(function(){
-	$('#orderBtn').click(function(){
-		$('#orderForm').submit();
-	})
 	
 	$('#ctgList ul li').eq(0).addClass('clickLi');
 	
@@ -158,7 +155,7 @@ function cart(){
         	
         	if(data === "true"){
         		let result = confirm('장바구니에 담았습니다.\n장바구니로 이동하시겠습니까?');
-        		if(result) location.href='/KBOMartket/order/cartForm';   
+        		if(result) location.href='/KBOMarket/order/cartForm';   
         	}else{
         		alert('로그인이 필요합니다.');
         		location.href="/KBOMarket/user/loginForm";
@@ -170,14 +167,6 @@ function cart(){
     });
 }
 
-function buy(){
-	if ($('#orderForm').length === 0) {
-        alert('옵션을 선택해 주세요.');
-        return;
-    }
-	
-	$('#orderForm').submit();
-}
 </script>
 </body>
 </html>

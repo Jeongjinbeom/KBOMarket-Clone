@@ -23,4 +23,17 @@
 	</select>
 	
 	<!--  -->
+	
+	
+	<!-- 카카오 로그인 -->
+	<select id="findUser" parameterType="userDTO" resultType="userDTO">
+		select * from KBOUser where userId = #{userId} and pwd=#{pwd}
+	</select>
+	
+	<insert id="saveUser" parameterType="userDTO">
+		insert into KBOUser (userId, name, pwd, email, tel, zipcode, addr1, addr2) 
+		values(#{userId}, #{name}, #{pwd},
+			#{email}, #{tel}, #{zipcode}, #{addr1}, #{addr2})
+	</insert>
+	
  </mapper>

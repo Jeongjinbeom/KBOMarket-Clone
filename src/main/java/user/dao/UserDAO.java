@@ -15,5 +15,9 @@ public interface UserDAO {
 
 	public UserDTO login(Map<String, String> map);
 
+	public void saveUser(UserDTO user);
+
+	public UserDTO findUser(UserDTO user);
+
 
 }
