@@ -30,8 +30,10 @@
 	<div id="detailOrderDiv">
 		<table>
 			<tr>
-				<th colspan="2">
+				<th>
 					<input type="checkbox" id="allDeleteBtn" class="deleteBtn" style="display: none;" onclick="toggleAll(this)"/>
+				</th>
+				<th colspan="2">
 					<label for="allDeleteBtn">상품/옵션 정보</label>
 				</th>
 				<th>수량</th>
@@ -41,8 +43,10 @@
 	<c:forEach items="${cartDTO }" var="data"  varStatus="status">
 			
 	<tr>
-		<td class="img">
+		<td>
 		<input type="checkbox" name="seq" value="${data.cartNo }" id="${data.cartNo }" style="display: none;" class="deleteBtn" value="${data.cartNo }"  onclick="updateAllCheckbox(this)"/>
+		</td>
+		<td class="img">
 		<label for="${data.cartNo }">
 			<img src="https://kr.object.ncloudstorage.com/bitcamp-9th-bucket-138/storage/${goodsDTO[status.index].imageFileName}" id="orderPrdImage"/>
 		</label>
@@ -65,7 +69,7 @@
 	</form>
 </div>
 
-<div style="margin-bottom: 100px;"></div>
+<div style="margin-bottom: 300px;"></div>
 <jsp:include page="../footer.jsp"></jsp:include>
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript" src="../js/cartForm.js"></script>

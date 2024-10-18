@@ -30,8 +30,10 @@
 	<div id="detailOrderDiv">
 		<table>
 			<tr>
-				<th colspan="2">
+				<th>
 					<input type="checkbox" id="allDeleteBtn" class="deleteBtn" style="display: none;" onclick="toggleAll(this)"/>
+				</th>
+				<th colspan="2">
 					<label for="allDeleteBtn">상품/옵션 정보</label>
 				</th>
 				<th>수량</th>
@@ -43,8 +45,10 @@
 	<c:forEach items="${list }" var="data" varStatus="status">
 			
 	<tr>
-		<td class="img">
+		<td>
 		<input type="checkbox" name="seq" value="${data.ordNo }" id="${data.ordNo }" style="display: none;" class="deleteBtn" value="${data.ordNo }"  onclick="updateAllCheckbox(this)"/>
+		</td>
+		<td class="img">
 		<label for="${data.ordNo }">
 			<img src="https://kr.object.ncloudstorage.com/bitcamp-9th-bucket-138/storage/${goodsDTO[status.index].imageFileName}" id="orderPrdImage"/>
 		</label>
@@ -57,7 +61,7 @@
 		<td>${data.qty }</td>
 		<td><fmt:formatNumber pattern="#,### 원">${data.orderPrice }</fmt:formatNumber></td>
 		<td><fmt:formatNumber pattern="#,### 원">${data.orderPrice }</fmt:formatNumber></td>
-		<td><input type="button" value="후기쓰기" style="width: 70px; height: 30px; background: #333; color: #fff; border: 0; cursor: pointer;"></td>
+		<td><input type="button" value="후기쓰기" class="reviewFormBtn"></td>
 	</tr>
 		
 	</c:forEach>
@@ -71,7 +75,7 @@
 	</form>
 </div>
 
-<div style="margin-bottom: 100px;"></div>
+<div style="margin-bottom: 300px;"></div>
 <jsp:include page="../footer.jsp"></jsp:include>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>

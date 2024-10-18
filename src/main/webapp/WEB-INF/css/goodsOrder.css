@@ -228,3 +228,43 @@ table{
 	padding-top: 10px;
 	color: tomato;
 }
+
+
+@media (max-width: 1200px) {
+
+    #orderDiv {
+        padding: 0 10px;
+    }
+
+    #history {
+        padding: 0 10px;
+    }
+
+    #orderTitle {
+        padding-bottom: 80px;
+    }
+    #detailOrderDiv, #orderTotalPriceDiv, #orderInfoDiv, #orderBtnDiv {
+    	font-size: 0.8em;
+    }
+    
+#orderTotalPriceDiv table th:nth-child(1), #orderTotalPriceDiv table td:nth-child(1) {
+	
+	width: 10%;
+}
+
+#orderTotalPriceDiv table th:nth-child(2) {
+	width: 30%;
+}
+    
+	#orderTitle #title2 {
+		float: left;
+	}
+
+    #detailOrderDiv .prdname {
+        width: 100%; /* Full width on small screens */
+    }
+
+    #deliveryInfoDiv table input[type="text"] {
+        width: calc(100% - 20px); /* Full width, accounting for padding */
+    }
+}
