@@ -45,6 +45,8 @@ KBOMarket UI/UX를 본떠서 클론코딩을 진행했습니다. 이 프로젝�
 - 상품은 여러개의 구단명을 가질 수 있다. ( 1: N )
 - 상품은 여러개를 구매할 수 있다. ( 1: N )
 
+## 기능 구현
+-- KBOMARKET.pdf 파일 참조
   
 ## 기술 스택
 - **프론트엔드**: HTML, CSS, JavaScript (jQuery)
