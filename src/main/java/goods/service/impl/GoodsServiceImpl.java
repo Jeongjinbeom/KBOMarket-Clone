@@ -106,7 +106,7 @@ public class GoodsServiceImpl implements GoodsService {
 		int totalA = goodsDAO.goodsTotalA(prdNo);
 		reviewPaging.setCurrentPage(Integer.parseInt(pg));
 		reviewPaging.setPageBlock(3);
-		reviewPaging.setPageSize(5);
+		reviewPaging.setPageSize(3);
 		reviewPaging.setTotalA(totalA);
 		reviewPaging.makePagingHTML();
 		
