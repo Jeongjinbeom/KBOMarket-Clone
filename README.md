@@ -47,7 +47,8 @@ KBOMarket UI/UX를 본떠서 클론코딩을 진행했습니다. 이 프로젝�
 
 ## 기능 구현
 - KBOMARKET.pdf 파일 참조
-  
+  [Uploading KBOMARKET.pdf…]()
+
 ## 기술 스택
 - **프론트엔드**: HTML, CSS, JavaScript (jQuery)
 - **백엔드**: Spring, Java, MyBatis 
