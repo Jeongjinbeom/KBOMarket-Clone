@@ -51,9 +51,9 @@ KBOMarket UI/UX를 본떠서 클론코딩을 진행했습니다. 이 프로젝�
 - **DB**: MySql
 - **CI/CD** : NCP(MySQL, Object Storage), Docker, Jenkins
 - **기타**: Git, JSP
-- 
 
 ## 기능 구현
+http://211.188.48.128:8090/KBOMarket/
 ![1](https://github.com/user-attachments/assets/e12e2f6c-579c-4d84-a357-ed1ee91e999f)
 ![2](https://github.com/user-attachments/assets/431e0144-074d-44ff-8e00-5bc80145b5eb)
 ![3](https://github.com/user-attachments/assets/aa0a5134-63a3-4a08-94bb-791474876cf3)
