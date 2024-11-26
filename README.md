@@ -45,6 +45,14 @@ KBOMarket UI/UX를 본떠서 클론코딩을 진행했습니다. 이 프로젝�
 - 상품은 여러개의 구단명을 가질 수 있다. ( 1: N )
 - 상품은 여러개를 구매할 수 있다. ( 1: N )
 
+## 기술 스택
+- **프론트엔드**: HTML, CSS, JavaScript (jQuery)
+- **백엔드**: Spring, Java, MyBatis 
+- **DB**: MySql
+- **CI/CD** : NCP(MySQL, Object Storage), Docker, Jenkins
+- **기타**: Git, JSP
+- 
+
 ## 기능 구현
 ![1](https://github.com/user-attachments/assets/e12e2f6c-579c-4d84-a357-ed1ee91e999f)
 ![2](https://github.com/user-attachments/assets/431e0144-074d-44ff-8e00-5bc80145b5eb)
@@ -62,9 +70,4 @@ KBOMarket UI/UX를 본떠서 클론코딩을 진행했습니다. 이 프로젝�
 ![14](https://github.com/user-attachments/assets/0be4f9bc-6e21-45aa-9be2-63134b0613b7)
 
 
-## 기술 스택
-- **프론트엔드**: HTML, CSS, JavaScript (jQuery)
-- **백엔드**: Spring, Java, MyBatis 
-- **DB**: MySql
-- **CI/CD** : NCP(MySQL, Object Storage), Docker, Jenkins
-- **기타**: Git, JSP
+
