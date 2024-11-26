@@ -46,7 +46,20 @@ KBOMarket UI/UX를 본떠서 클론코딩을 진행했습니다. 이 프로젝�
 - 상품은 여러개를 구매할 수 있다. ( 1: N )
 
 ## 기능 구현
-- KBOMARKET.pdf 파일 참조
+![1](https://github.com/user-attachments/assets/e12e2f6c-579c-4d84-a357-ed1ee91e999f)
+![2](https://github.com/user-attachments/assets/431e0144-074d-44ff-8e00-5bc80145b5eb)
+![3](https://github.com/user-attachments/assets/aa0a5134-63a3-4a08-94bb-791474876cf3)
+![4](https://github.com/user-attachments/assets/d77aa150-cc94-44bd-b679-1a96f5c0a8e5)
+![5](https://github.com/user-attachments/assets/71043875-3c21-41c8-865f-af9afacdad0c)
+![6](https://github.com/user-attachments/assets/fe341562-d41e-46ef-9332-dd19e3d3411a)
+![7](https://github.com/user-attachments/assets/d1e0dc39-119c-44fc-beaa-79e2d4d886c5)
+![8](https://github.com/user-attachments/assets/a91718a0-8ba3-4ce4-8ab9-a909bdde5c89)
+![9](https://github.com/user-attachments/assets/af11d672-c730-482c-9bce-cb889b88f9a5)
+![10](https://github.com/user-attachments/assets/bfa9449d-ccba-4930-a7a3-5654971a7ac4)
+![11](https://github.com/user-attachments/assets/fc2b4388-dd1d-4989-8546-3d651186ef87)
+![12](https://github.com/user-attachments/assets/d5eef872-de90-41db-ade4-0d9f495e85d9)
+![13](https://github.com/user-attachments/assets/9b5a3319-a418-4dcc-9dea-61f7119b8ea8)
+![14](https://github.com/user-attachments/assets/0be4f9bc-6e21-45aa-9be2-63134b0613b7)
 
 
 ## 기술 스택
